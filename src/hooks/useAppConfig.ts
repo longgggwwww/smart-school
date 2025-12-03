@@ -1,9 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
 import {
-  AppConfig,
-  WindowConfig,
-  Theme,
-  ScreenMode,
   getConfig,
   setConfig,
   getTheme,
@@ -13,7 +9,9 @@ import {
   getAutoStart,
   setAutoStart as setAutoStartService,
 } from "../services/configService";
+import type { AppConfig, WindowConfig, Theme, ScreenMode } from "../types";
 
+// Re-export types for convenience
 export type { AppConfig, WindowConfig, Theme, ScreenMode };
 
 /**

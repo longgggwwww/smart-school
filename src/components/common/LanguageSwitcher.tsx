@@ -7,16 +7,12 @@ import {
   Button,
 } from "@heroui/react";
 import { saveLanguageToConfig } from "../../i18n";
-
-const languages = [
-  { key: "en", label: "🇺🇸 English" },
-  { key: "vi", label: "🇻🇳 Tiếng Việt" },
-];
+import { LANGUAGES } from "../../utils/constants";
 
 export default function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
 
-  const currentLang = languages.find((l) => l.key === i18n.language) || languages[0];
+  const currentLang = LANGUAGES.find((l) => l.key === i18n.language) || LANGUAGES[0];
 
   const handleLanguageChange = async (key: string) => {
     await i18n.changeLanguage(key);
@@ -40,7 +36,7 @@ export default function LanguageSwitcher() {
           if (selected) handleLanguageChange(selected);
         }}
       >
-        {languages.map((lang) => (
+        {LANGUAGES.map((lang) => (
           <DropdownItem key={lang.key}>{lang.label}</DropdownItem>
         ))}
       </DropdownMenu>
