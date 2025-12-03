@@ -1,49 +1,79 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
+import { useTranslation } from "react-i18next";
+import {
+  Button,
+  Input,
+  Card,
+  CardHeader,
+  CardBody,
+} from "@heroui/react";
 import { invoke } from "@tauri-apps/api/core";
-import "./App.css";
+import LanguageSwitcher from "./components/common/LanguageSwitcher";
 
 function App() {
+  const { t } = useTranslation();
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
 
   async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke("greet", { name }));
+    const result = await invoke<string>("greet", { name });
+    setGreetMsg(result);
   }
 
   return (
-    <main className="container">
-      <h1>Welcome to Tauri + React</h1>
+    <main className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800 p-8">
+      <div className="max-w-2xl mx-auto space-y-6">
+        {/* Language Switcher */}
+        <div className="flex justify-end">
+          <LanguageSwitcher />
+        </div>
 
-      <div className="row">
-        <a href="https://vite.dev" target="_blank">
-          <img src="/vite.svg" className="logo vite" alt="Vite logo" />
-        </a>
-        <a href="https://tauri.app" target="_blank">
-          <img src="/tauri.svg" className="logo tauri" alt="Tauri logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        {/* Greet Form Card */}
+        <Card className="shadow-lg">
+          <CardHeader className="pb-0 pt-4 px-6">
+            <h2 className="text-xl font-semibold">{t("common.greet")}</h2>
+          </CardHeader>
+          <CardBody className="px-6 py-6">
+            <form
+              className="flex flex-col gap-4"
+              onSubmit={(e) => {
+                e.preventDefault();
+                greet();
+              }}
+            >
+              <Input
+                label={t("common.enterName")}
+                placeholder={t("common.enterName")}
+                value={name}
+                onValueChange={setName}
+                variant="bordered"
+                size="lg"
+                classNames={{
+                  inputWrapper: "border-2",
+                }}
+              />
+              <Button
+                type="submit"
+                color="primary"
+                size="lg"
+                className="font-semibold"
+              >
+                {t("common.greet")}
+              </Button>
+            </form>
+
+            {greetMsg && (
+              <Card className="mt-4 bg-success-50 dark:bg-success-900/20">
+                <CardBody className="py-3">
+                  <p className="text-success-700 dark:text-success-400 text-center font-medium">
+                    {greetMsg}
+                  </p>
+                </CardBody>
+              </Card>
+            )}
+          </CardBody>
+        </Card>
       </div>
-      <p>Click on the Tauri, Vite, and React logos to learn more.</p>
-
-      <form
-        className="row"
-        onSubmit={(e) => {
-          e.preventDefault();
-          greet();
-        }}
-      >
-        <input
-          id="greet-input"
-          onChange={(e) => setName(e.currentTarget.value)}
-          placeholder="Enter a name..."
-        />
-        <button type="submit">Greet</button>
-      </form>
-      <p>{greetMsg}</p>
     </main>
   );
 }

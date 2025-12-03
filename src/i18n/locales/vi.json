@@ -1,0 +1,15 @@
+{
+  "common": {
+    "welcome": "Chào mừng đến với Tauri App",
+    "greeting": "Xin chào, {{name}}! Bạn đã được chào từ Rust!",
+    "enterName": "Nhập tên...",
+    "greet": "Chào",
+    "language": "Ngôn ngữ",
+    "english": "Tiếng Anh",
+    "vietnamese": "Tiếng Việt"
+  },
+  "home": {
+    "title": "Trang chủ",
+    "description": "Nhấp vào logo Tauri, Vite và React để tìm hiểu thêm."
+  }
+}
