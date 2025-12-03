@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="en-US" Codepage="1252"
+    xmlns="http://schemas.microsoft.com/wix/2006/localization">
+
+    <!-- ======================= TAURI CUSTOM STRINGS ======================= -->
+    <String Id="DowngradeErrorMessage" Overridable="yes">A newer version of [ProductName] is already installed. Please uninstall the current version first.</String>
+    <String Id="PathEnvVarFeature" Overridable="yes">Add the install location of [ProductName] to the PATH environment variable so you can call it from command line.</String>
+    <String Id="InstallAppFeature" Overridable="yes">Install [ProductName].</String>
+
+</WixLocalization>

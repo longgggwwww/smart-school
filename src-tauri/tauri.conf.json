@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "tauri-app",
+  "productName": "Smart Classroom",
   "version": "0.1.0",
   "identifier": "com.ad.tauri-app",
   "build": {
@@ -30,6 +30,29 @@
       "icons/128x128@2x.png",
       "icons/icon.icns",
       "icons/icon.ico"
-    ]
+    ],
+    "windows": {
+        "allowDowngrades": true,
+        "certificateThumbprint": null,
+        "digestAlgorithm": null,
+        "nsis": null,
+        "signCommand": null,
+        "timestampUrl": null,
+        "tsp": false,
+        "webviewInstallMode": {
+            "silent": true,
+            "type": "downloadBootstrapper"
+        },
+        "wix": {
+            "language": {
+                "en-US": {
+                    "localePath": "./wix/locales/en-US.wxl"
+                },
+                "vi-VN": {
+                    "localePath": "./wix/locales/vi-VN.wxl"
+                }
+            }
+        }
+    }
   }
 }

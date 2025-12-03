@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="vi-VN" Codepage="65001"
+    xmlns="http://schemas.microsoft.com/wix/2006/localization">
+
+    <!-- ======================= TÊN ỨNG DỤNG ======================= -->
+    <String Id="AppName">Phòng học thông minh</String>
+
+    <!-- ======================= NÚT ĐIỀU HƯỚNG ======================= -->
+    <String Id="WixUIBack" Overridable="yes">&amp;Quay lại</String>
+    <String Id="WixUINext" Overridable="yes">&amp;Tiếp theo</String>
+    <String Id="WixUICancel" Overridable="yes">Huỷ bỏ</String>
+    <String Id="WixUIFinish" Overridable="yes">&amp;Hoàn tất</String>
+    <String Id="WixUIRetry" Overridable="yes">&amp;Thử lại</String>
+    <String Id="WixUIIgnore" Overridable="yes">&amp;Bỏ qua</String>
+    <String Id="WixUIYes" Overridable="yes">&amp;Có</String>
+    <String Id="WixUINo" Overridable="yes">&amp;Không</String>
+    <String Id="WixUIOK" Overridable="yes">OK</String>
+    <String Id="WixUIPrint" Overridable="yes">&amp;In</String>
+
+    <!-- ======================= MÀN HÌNH CHÀO MỪNG ======================= -->
+    <String Id="WelcomeDlg_Title" Overridable="yes">Cài đặt !(loc.AppName)</String>
+    <String Id="WelcomeDlgDescription" Overridable="yes">Trình cài đặt sẽ cài !(loc.AppName) trên máy tính của bạn. Nhấn Tiếp theo để tiếp tục hoặc Huỷ bỏ để thoát.</String>
+    <String Id="WelcomeDlgTitle" Overridable="yes">{\WixUI_Font_Bigger}Chào mừng đến Trình cài đặt !(loc.AppName)</String>
+
+    <!-- ======================= THOẢ THUẬN CẤP PHÉP ======================= -->
+    <String Id="LicenseAgreementDlg_Title" Overridable="yes">Cài đặt !(loc.AppName)</String>
+    <String Id="LicenseAgreementDlgLicenseAcceptedCheckBox" Overridable="yes">Tôi &amp;chấp nhận các điều khoản trong Thoả thuận cấp phép</String>
+    <String Id="LicenseAgreementDlgDescription" Overridable="yes">Vui lòng đọc kỹ thoả thuận cấp phép sau đây</String>
+    <String Id="LicenseAgreementDlgTitle" Overridable="yes">{\WixUI_Font_Title}Thoả thuận cấp phép người dùng cuối</String>
+
+    <!-- ======================= CHỌN THƯ MỤC CÀI ĐẶT ======================= -->
+    <String Id="InstallDirDlg_Title" Overridable="yes">Cài đặt !(loc.AppName)</String>
+    <String Id="InstallDirDlgChange" Overridable="yes">&amp;Thay đổi...</String>
+    <String Id="InstallDirDlgTitle" Overridable="yes">{\WixUI_Font_Title}Thư mục cài đặt</String>
+    <String Id="InstallDirDlgDescription" Overridable="yes">Nhấn Tiếp theo để cài đặt vào thư mục mặc định hoặc nhấn Thay đổi để chọn thư mục khác.</String>
+    <String Id="InstallDirDlgFolderLabel" Overridable="yes">Cài đặt !(loc.AppName) vào:</String>
+
+    <!-- ======================= DUYỆT THƯ MỤC ======================= -->
+    <String Id="BrowseDlg_Title" Overridable="yes">Cài đặt !(loc.AppName)</String>
+    <String Id="BrowseDlgComboLabel" Overridable="yes">&amp;Tìm trong:</String>
+    <String Id="BrowseDlgWixUI_Bmp_UpTooltip" Overridable="yes">Lên một cấp</String>
+    <String Id="BrowseDlgNewFolderTooltip" Overridable="yes">Tạo thư mục mới</String>
+    <String Id="BrowseDlgPathLabel" Overridable="yes">&amp;Tên thư mục:</String>
+    <String Id="BrowseDlgDescription" Overridable="yes">Duyệt đến thư mục cài đặt</String>
+    <String Id="BrowseDlgTitle" Overridable="yes">{\WixUI_Font_Title}Thay đổi thư mục cài đặt</String>
+
+    <!-- ======================= XÁC NHẬN HUỶ ======================= -->
+    <String Id="CancelDlg_Title" Overridable="yes">Cài đặt !(loc.AppName)</String>
+    <String Id="CancelDlgText" Overridable="yes">Bạn có chắc chắn muốn huỷ cài đặt !(loc.AppName)?</String>
+
+    <!-- ======================= SẴN SÀNG CÀI ĐẶT ======================= -->
+    <String Id="VerifyReadyDlg_Title" Overridable="yes">Cài đặt !(loc.AppName)</String>
+    <String Id="VerifyReadyDlgInstall" Overridable="yes">&amp;Cài đặt</String>
+    <String Id="VerifyReadyDlgInstallText" Overridable="yes">Nhấn Cài đặt để bắt đầu cài đặt. Nhấn Quay lại để xem lại hoặc thay đổi cài đặt. Nhấn Huỷ bỏ để thoát.</String>
+    <String Id="VerifyReadyDlgInstallTitle" Overridable="yes">{\WixUI_Font_Title}Sẵn sàng cài đặt !(loc.AppName)</String>
+    <String Id="VerifyReadyDlgChange" Overridable="yes">&amp;Thay đổi</String>
+    <String Id="VerifyReadyDlgChangeText" Overridable="yes">Nhấn Thay đổi để bắt đầu cài đặt. Nhấn Quay lại để xem lại hoặc thay đổi cài đặt. Nhấn Huỷ bỏ để thoát.</String>
+    <String Id="VerifyReadyDlgChangeTitle" Overridable="yes">{\WixUI_Font_Title}Sẵn sàng thay đổi !(loc.AppName)</String>
+    <String Id="VerifyReadyDlgRepair" Overridable="yes">&amp;Sửa chữa</String>
+    <String Id="VerifyReadyDlgRepairText" Overridable="yes">Nhấn Sửa chữa để sửa chữa cài đặt !(loc.AppName). Nhấn Quay lại để xem lại hoặc thay đổi cài đặt. Nhấn Huỷ bỏ để thoát.</String>
+    <String Id="VerifyReadyDlgRepairTitle" Overridable="yes">{\WixUI_Font_Title}Sẵn sàng sửa chữa !(loc.AppName)</String>
+    <String Id="VerifyReadyDlgRemove" Overridable="yes">&amp;Gỡ cài đặt</String>
+    <String Id="VerifyReadyDlgRemoveText" Overridable="yes">Nhấn Gỡ cài đặt để gỡ !(loc.AppName) khỏi máy tính của bạn. Nhấn Quay lại để xem lại hoặc thay đổi cài đặt. Nhấn Huỷ bỏ để thoát.</String>
+    <String Id="VerifyReadyDlgRemoveTitle" Overridable="yes">{\WixUI_Font_Title}Sẵn sàng gỡ cài đặt !(loc.AppName)</String>
+
+    <!-- ======================= TIẾN TRÌNH CÀI ĐẶT ======================= -->
+    <String Id="ProgressDlg_Title" Overridable="yes">Cài đặt !(loc.AppName)</String>
+    <String Id="ProgressDlgTextInstalling" Overridable="yes">Vui lòng chờ trong khi Trình cài đặt cài !(loc.AppName).</String>
+    <String Id="ProgressDlgTitleInstalling" Overridable="yes">{\WixUI_Font_Title}Đang cài đặt !(loc.AppName)</String>
+    <String Id="ProgressDlgTextChanging" Overridable="yes">Vui lòng chờ trong khi Trình cài đặt thay đổi !(loc.AppName).</String>
+    <String Id="ProgressDlgTitleChanging" Overridable="yes">{\WixUI_Font_Title}Đang thay đổi !(loc.AppName)</String>
+    <String Id="ProgressDlgTextRepairing" Overridable="yes">Vui lòng chờ trong khi Trình cài đặt sửa chữa !(loc.AppName).</String>
+    <String Id="ProgressDlgTitleRepairing" Overridable="yes">{\WixUI_Font_Title}Đang sửa chữa !(loc.AppName)</String>
+    <String Id="ProgressDlgTextRemoving" Overridable="yes">Vui lòng chờ trong khi Trình cài đặt gỡ !(loc.AppName).</String>
+    <String Id="ProgressDlgTitleRemoving" Overridable="yes">{\WixUI_Font_Title}Đang gỡ cài đặt !(loc.AppName)</String>
+    <String Id="ProgressDlgProgressBar" Overridable="yes">Tiến trình hoàn thành</String>
+    <String Id="ProgressDlgStatusLabel" Overridable="yes">Trạng thái:</String>
+
+    <!-- ======================= HOÀN TẤT CÀI ĐẶT ======================= -->
+    <String Id="ExitDialog_Title" Overridable="yes">Cài đặt !(loc.AppName)</String>
+    <String Id="ExitDialogDescription" Overridable="yes">Nhấn nút Hoàn tất để thoát Trình cài đặt.</String>
+    <String Id="ExitDialogTitle" Overridable="yes">{\WixUI_Font_Bigger}Đã hoàn tất Trình cài đặt !(loc.AppName)</String>
+
+    <!-- ======================= LỖI NGHIÊM TRỌNG ======================= -->
+    <String Id="FatalError_Title" Overridable="yes">Cài đặt !(loc.AppName)</String>
+    <String Id="FatalErrorTitle" Overridable="yes">{\WixUI_Font_Bigger}Trình cài đặt !(loc.AppName) đã kết thúc sớm</String>
+    <String Id="FatalErrorDescription1" Overridable="yes">Trình cài đặt !(loc.AppName) đã kết thúc sớm do lỗi. Hệ thống của bạn không bị thay đổi. Để cài đặt chương trình này sau, hãy chạy lại Trình cài đặt.</String>
+    <String Id="FatalErrorDescription2" Overridable="yes">Nhấn nút Hoàn tất để thoát Trình cài đặt.</String>
+
+    <!-- ======================= NGƯỜI DÙNG THOÁT ======================= -->
+    <String Id="UserExit_Title" Overridable="yes">Cài đặt !(loc.AppName)</String>
+    <String Id="UserExitTitle" Overridable="yes">{\WixUI_Font_Bigger}Trình cài đặt !(loc.AppName) đã bị gián đoạn</String>
+    <String Id="UserExitDescription1" Overridable="yes">Cài đặt !(loc.AppName) đã bị gián đoạn. Hệ thống của bạn không bị thay đổi. Để cài đặt chương trình này sau, vui lòng chạy lại Trình cài đặt.</String>
+    <String Id="UserExitDescription2" Overridable="yes">Nhấn nút Hoàn tất để thoát Trình cài đặt.</String>
+
+    <!-- ======================= BẢO TRÌ ======================= -->
+    <String Id="MaintenanceTypeDlg_Title" Overridable="yes">Cài đặt !(loc.AppName)</String>
+    <String Id="MaintenanceTypeDlgChangeButton" Overridable="yes">&amp;Thay đổi</String>
+    <String Id="MaintenanceTypeDlgChangeButtonTooltip" Overridable="yes">Thay đổi cài đặt</String>
+    <String Id="MaintenanceTypeDlgRepairButton" Overridable="yes">&amp;Sửa chữa</String>
+    <String Id="MaintenanceTypeDlgRepairButtonTooltip" Overridable="yes">Sửa chữa cài đặt</String>
+    <String Id="MaintenanceTypeDlgRemoveButton" Overridable="yes">&amp;Gỡ bỏ</String>
+    <String Id="MaintenanceTypeDlgRemoveButtonTooltip" Overridable="yes">Gỡ bỏ cài đặt</String>
+    <String Id="MaintenanceTypeDlgDescription" Overridable="yes">Chọn thao tác bạn muốn thực hiện.</String>
+    <String Id="MaintenanceTypeDlgTitle" Overridable="yes">{\WixUI_Font_Title}Thay đổi, sửa chữa hoặc gỡ cài đặt</String>
+    <String Id="MaintenanceTypeDlgChangeText" Overridable="yes">Cho phép bạn thay đổi cách cài đặt các tính năng.</String>
+    <String Id="MaintenanceTypeDlgRemoveText" Overridable="yes">Gỡ !(loc.AppName) khỏi máy tính của bạn.</String>
+    <String Id="MaintenanceTypeDlgRepairText" Overridable="yes">Sửa chữa lỗi trong cài đặt gần nhất của !(loc.AppName) bằng cách khắc phục các tệp, phím tắt và mục registry bị thiếu hoặc hỏng.</String>
+
+    <String Id="MaintenanceWelcomeDlg_Title" Overridable="yes">Cài đặt !(loc.AppName)</String>
+    <String Id="MaintenanceWelcomeDlgDescription" Overridable="yes">Trình cài đặt cho phép bạn thay đổi cách cài đặt các tính năng của !(loc.AppName) trên máy tính hoặc gỡ bỏ hoàn toàn. Nhấn Tiếp theo để tiếp tục hoặc Huỷ bỏ để thoát.</String>
+    <String Id="MaintenanceWelcomeDlgTitle" Overridable="yes">{\WixUI_Font_Bigger}Chào mừng đến Trình cài đặt !(loc.AppName)</String>
+
+    <!-- ======================= THƯ MỤC KHÔNG HỢP LỆ ======================= -->
+    <String Id="InvalidDirDlg_Title" Overridable="yes">Cài đặt !(loc.AppName)</String>
+    <String Id="InvalidDirDlgText" Overridable="yes">Thư mục cài đặt phải nằm trên ổ cứng cục bộ.</String>
+
+    <!-- ======================= HẾT DUNG LƯỢNG Ổ ĐĨA ======================= -->
+    <String Id="OutOfDiskDlg_Title" Overridable="yes">Cài đặt !(loc.AppName)</String>
+    <String Id="OutOfDiskDlgText" Overridable="yes">Các ổ đĩa được đánh dấu không có đủ dung lượng cho các tính năng được chọn. Bạn có thể xoá bớt tệp từ các ổ đĩa được đánh dấu, cài đặt ít tính năng hơn, hoặc chọn ổ đĩa khác.</String>
+    <String Id="OutOfDiskDlgDescription" Overridable="yes">Dung lượng ổ đĩa cần thiết cho cài đặt vượt quá dung lượng khả dụng.</String>
+    <String Id="OutOfDiskDlgTitle" Overridable="yes">{\WixUI_Font_Title}Hết dung lượng ổ đĩa</String>
+
+    <!-- ======================= TỆP ĐANG SỬ DỤNG ======================= -->
+    <String Id="FilesInUse_Title" Overridable="yes">Cài đặt !(loc.AppName)</String>
+    <String Id="FilesInUseExit" Overridable="yes">&amp;Thoát</String>
+    <String Id="FilesInUseText" Overridable="yes">Các ứng dụng sau đang sử dụng các tệp cần được cập nhật bởi cài đặt này. Đóng các ứng dụng này và nhấn &amp;Thử lại để tiếp tục hoặc Thoát để thoát.</String>
+    <String Id="FilesInUseDescription" Overridable="yes">Một số tệp cần cập nhật đang được sử dụng.</String>
+    <String Id="FilesInUseTitle" Overridable="yes">{\WixUI_Font_Title}Tệp đang sử dụng</String>
+
+    <!-- ======================= TIẾN TRÌNH TEXT ======================= -->
+    <String Id="ProgressTextInstallValidate" Overridable="yes">Đang xác thực cài đặt</String>
+    <String Id="ProgressTextInstallFiles" Overridable="yes">Đang sao chép tệp mới</String>
+    <String Id="ProgressTextFileCost" Overridable="yes">Đang tính toán dung lượng cần thiết</String>
+    <String Id="ProgressTextCostInitialize" Overridable="yes">Đang tính toán dung lượng cần thiết</String>
+    <String Id="ProgressTextCostFinalize" Overridable="yes">Đang tính toán dung lượng cần thiết</String>
+    <String Id="ProgressTextCreateShortcuts" Overridable="yes">Đang tạo phím tắt</String>
+    <String Id="ProgressTextPublishFeatures" Overridable="yes">Đang xuất bản tính năng sản phẩm</String>
+    <String Id="ProgressTextPublishProduct" Overridable="yes">Đang xuất bản thông tin sản phẩm</String>
+    <String Id="ProgressTextRegisterProduct" Overridable="yes">Đang đăng ký sản phẩm</String>
+    <String Id="ProgressTextCreateFolders" Overridable="yes">Đang tạo thư mục</String>
+    <String Id="ProgressTextRemoveFiles" Overridable="yes">Đang xoá tệp</String>
+    <String Id="ProgressTextRemoveFolders" Overridable="yes">Đang xoá thư mục</String>
+    <String Id="ProgressTextRemoveShortcuts" Overridable="yes">Đang xoá phím tắt</String>
+
+    <!-- ======================= LỖI ======================= -->
+    <String Id="Error20" Overridable="yes">Vui lòng chờ trong khi Windows cấu hình !(loc.AppName)</String>
+    <String Id="Error21" Overridable="yes">Đang thu thập thông tin cần thiết...</String>
+    <String Id="Error32" Overridable="yes">{!(loc.AppName) }Cài đặt hoàn tất thành công.</String>
+    <String Id="Error33" Overridable="yes">{!(loc.AppName) }Cài đặt thất bại.</String>
+    <String Id="Error1602" Overridable="yes">Bạn có chắc chắn muốn huỷ?</String>
+    <String Id="Error1707" Overridable="yes">Cài đặt hoàn tất thành công.</String>
+    <String Id="Error1708" Overridable="yes">Cài đặt thất bại.</String>
+    <String Id="Error1724" Overridable="yes">Gỡ cài đặt hoàn tất thành công.</String>
+    <String Id="Error1725" Overridable="yes">Gỡ cài đặt thất bại.</String>
+
+    <!-- ======================= ĐƠN VỊ DUNG LƯỢNG ======================= -->
+    <String Id="UITextbytes" Overridable="yes">byte</String>
+    <String Id="UITextGB" Overridable="yes">GB</String>
+    <String Id="UITextKB" Overridable="yes">KB</String>
+    <String Id="UITextMB" Overridable="yes">MB</String>
+
+    <!-- ======================= THỜI GIAN CÒN LẠI ======================= -->
+    <String Id="UITextTimeRemaining" Overridable="yes">Thời gian còn lại:{ [1] phút}{ [2] giây}</String>
+    <String Id="UITextVolumeCostAvailable" Overridable="yes">Khả dụng</String>
+    <String Id="UITextVolumeCostDifference" Overridable="yes">Chênh lệch</String>
+    <String Id="UITextVolumeCostRequired" Overridable="yes">Cần thiết</String>
+    <String Id="UITextVolumeCostSize" Overridable="yes">Dung lượng ổ đĩa</String>
+    <String Id="UITextVolumeCostVolume" Overridable="yes">Ổ đĩa</String>
+
+    <!-- ======================= TAURI CUSTOM STRINGS ======================= -->
+    <String Id="DowngradeErrorMessage" Overridable="yes">Đã cài đặt phiên bản mới hơn của !(loc.AppName). Vui lòng gỡ cài đặt phiên bản hiện tại trước.</String>
+    <String Id="PathEnvVarFeature" Overridable="yes">Thêm vị trí cài đặt của !(loc.AppName) vào biến môi trường PATH để có thể gọi chương trình từ dòng lệnh.</String>
+    <String Id="InstallAppFeature" Overridable="yes">Cài đặt !(loc.AppName).</String>
+    <String Id="LaunchApp" Overridable="yes">Khởi chạy !(loc.AppName)</String>
+
+</WixLocalization>
