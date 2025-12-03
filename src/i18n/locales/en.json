@@ -11,5 +11,38 @@
   "home": {
     "title": "Home",
     "description": "Click on the Tauri, Vite, and React logos to learn more."
+  },
+  "auth": {
+    "welcome": "Smart School",
+    "signInToContinue": "Sign in to continue",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "signIn": "Sign In",
+    "forgotPassword": "Forgot password?",
+    "errorRequired": "Please enter email and password",
+    "errorLogin": "Login failed. Please try again."
+  },
+  "dashboard": {
+    "home": "Home",
+    "students": "Students",
+    "classes": "Classes",
+    "reports": "Reports",
+    "signedInAs": "Signed in as",
+    "settings": "Settings",
+    "help": "Help & Feedback",
+    "logout": "Log Out",
+    "loggingOut": "Logging out...",
+    "welcomeBack": "Welcome back! 👋",
+    "welcomeMessage": "Here's what's happening with your school today.",
+    "totalStudents": "Total Students",
+    "totalClasses": "Total Classes",
+    "totalTeachers": "Total Teachers",
+    "attendance": "Attendance Rate",
+    "quickActions": "Quick Actions",
+    "addStudent": "Add Student",
+    "takeAttendance": "Take Attendance",
+    "viewReports": "View Reports"
   }
 }
