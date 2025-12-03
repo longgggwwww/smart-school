@@ -11,14 +11,14 @@ const resources = {
   vi: { translation: vi },
 };
 
-// Custom detector to read language from Windows Registry (set by WiX installer)
-const installerLanguageDetector = {
-  name: "installerLanguage",
+// Custom detector to read language from Windows Registry
+const registryLanguageDetector = {
+  name: "registryLanguage",
   
   // Synchronous lookup - returns cached value from localStorage
   lookup(): string | undefined {
-    // Check if we already detected installer language before
-    const cached = localStorage.getItem("installerLanguageDetected");
+    // Check if we already detected registry language before
+    const cached = localStorage.getItem("registryLanguageDetected");
     if (cached) {
       return cached;
     }
@@ -30,12 +30,12 @@ const installerLanguageDetector = {
   },
 };
 
-// Detect installer language on app startup and cache it
-async function detectInstallerLanguage() {
+// Detect language from registry on app startup and cache it
+async function detectRegistryLanguage() {
   try {
-    const lang = await invoke<string | null>("get_installer_language");
+    const lang = await invoke<string | null>("get_app_language");
     if (lang) {
-      localStorage.setItem("installerLanguageDetected", lang);
+      localStorage.setItem("registryLanguageDetected", lang);
       // Change language if different from current
       if (i18n.language !== lang) {
         i18n.changeLanguage(lang);
@@ -46,9 +46,19 @@ async function detectInstallerLanguage() {
   }
 }
 
-// Create a custom language detector with installer language as highest priority
+// Save language to registry when changed
+export async function saveLanguageToRegistry(language: string): Promise<void> {
+  try {
+    await invoke("set_app_language", { language });
+    localStorage.setItem("registryLanguageDetected", language);
+  } catch (error) {
+    console.error("Failed to save language to registry:", error);
+  }
+}
+
+// Create a custom language detector with registry language as highest priority
 const customLanguageDetector = new LanguageDetector();
-customLanguageDetector.addDetector(installerLanguageDetector);
+customLanguageDetector.addDetector(registryLanguageDetector);
 
 i18n
   .use(customLanguageDetector)
@@ -60,13 +70,13 @@ i18n
       escapeValue: false,
     },
     detection: {
-      // Priority: installer language > localStorage > browser navigator
-      order: ["installerLanguage", "localStorage", "navigator"],
+      // Priority: registry language > localStorage > browser navigator
+      order: ["registryLanguage", "localStorage", "navigator"],
       caches: ["localStorage"],
     },
   });
 
-// Detect installer language after i18n init
-detectInstallerLanguage();
+// Detect registry language after i18n init
+detectRegistryLanguage();
 
 export default i18n;
