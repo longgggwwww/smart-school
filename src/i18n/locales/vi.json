@@ -11,5 +11,38 @@
   "home": {
     "title": "Trang chủ",
     "description": "Nhấp vào logo Tauri, Vite và React để tìm hiểu thêm."
+  },
+  "auth": {
+    "welcome": "Smart School",
+    "signInToContinue": "Đăng nhập để tiếp tục",
+    "email": "Email",
+    "emailPlaceholder": "Nhập email của bạn",
+    "password": "Mật khẩu",
+    "passwordPlaceholder": "Nhập mật khẩu của bạn",
+    "signIn": "Đăng Nhập",
+    "forgotPassword": "Quên mật khẩu?",
+    "errorRequired": "Vui lòng nhập email và mật khẩu",
+    "errorLogin": "Đăng nhập thất bại. Vui lòng thử lại."
+  },
+  "dashboard": {
+    "home": "Trang chủ",
+    "students": "Học sinh",
+    "classes": "Lớp học",
+    "reports": "Báo cáo",
+    "signedInAs": "Đã đăng nhập với",
+    "settings": "Cài đặt",
+    "help": "Trợ giúp & Phản hồi",
+    "logout": "Đăng Xuất",
+    "loggingOut": "Đang đăng xuất...",
+    "welcomeBack": "Chào mừng trở lại! 👋",
+    "welcomeMessage": "Đây là những gì đang xảy ra với trường học của bạn hôm nay.",
+    "totalStudents": "Tổng số học sinh",
+    "totalClasses": "Tổng số lớp",
+    "totalTeachers": "Tổng số giáo viên",
+    "attendance": "Tỷ lệ điểm danh",
+    "quickActions": "Thao tác nhanh",
+    "addStudent": "Thêm học sinh",
+    "takeAttendance": "Điểm danh",
+    "viewReports": "Xem báo cáo"
   }
 }
