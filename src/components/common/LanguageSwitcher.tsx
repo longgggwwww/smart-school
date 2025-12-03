@@ -6,7 +6,7 @@ import {
   DropdownItem,
   Button,
 } from "@heroui/react";
-import { saveLanguageToRegistry } from "../../i18n";
+import { saveLanguageToConfig } from "../../i18n";
 
 const languages = [
   { key: "en", label: "🇺🇸 English" },
@@ -20,8 +20,8 @@ export default function LanguageSwitcher() {
 
   const handleLanguageChange = async (key: string) => {
     await i18n.changeLanguage(key);
-    // Save to Windows Registry for persistence across app restarts
-    saveLanguageToRegistry(key);
+    // Save to config file for persistence across app restarts
+    saveLanguageToConfig(key);
   };
 
   return (

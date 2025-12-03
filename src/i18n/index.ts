@@ -1,6 +1,5 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
 import { invoke } from "@tauri-apps/api/core";
 
 import en from "./locales/en.json";
@@ -11,72 +10,41 @@ const resources = {
   vi: { translation: vi },
 };
 
-// Custom detector to read language from Windows Registry
-const registryLanguageDetector = {
-  name: "registryLanguage",
-  
-  // Synchronous lookup - returns cached value from localStorage
-  lookup(): string | undefined {
-    // Check if we already detected registry language before
-    const cached = localStorage.getItem("registryLanguageDetected");
-    if (cached) {
-      return cached;
-    }
-    return undefined;
-  },
-  
-  cacheUserLanguage: (lng: string) => {
-    localStorage.setItem("i18nextLng", lng);
-  },
-};
-
-// Detect language from registry on app startup and cache it
-async function detectRegistryLanguage() {
+// Load language from config file on app startup
+export async function loadLanguageFromConfig(): Promise<string> {
   try {
     const lang = await invoke<string | null>("get_app_language");
-    if (lang) {
-      localStorage.setItem("registryLanguageDetected", lang);
-      // Change language if different from current
-      if (i18n.language !== lang) {
-        i18n.changeLanguage(lang);
-      }
+    if (lang && lang !== i18n.language) {
+      await i18n.changeLanguage(lang);
     }
+    return lang || "en";
   } catch {
-    // Tauri invoke not available (dev mode or non-Windows)
+    // Tauri invoke not available (dev mode or non-Tauri environment)
+    return "en";
   }
 }
 
-// Save language to registry when changed
-export async function saveLanguageToRegistry(language: string): Promise<void> {
+// Save language to config file when changed
+export async function saveLanguageToConfig(language: string): Promise<void> {
   try {
     await invoke("set_app_language", { language });
-    localStorage.setItem("registryLanguageDetected", language);
   } catch (error) {
-    console.error("Failed to save language to registry:", error);
+    console.error("Failed to save language to config:", error);
   }
 }
 
-// Create a custom language detector with registry language as highest priority
-const customLanguageDetector = new LanguageDetector();
-customLanguageDetector.addDetector(registryLanguageDetector);
-
 i18n
-  .use(customLanguageDetector)
   .use(initReactI18next)
   .init({
     resources,
+    lng: "en", // Default language, will be overridden by config
     fallbackLng: "en",
     interpolation: {
       escapeValue: false,
     },
-    detection: {
-      // Priority: registry language > localStorage > browser navigator
-      order: ["registryLanguage", "localStorage", "navigator"],
-      caches: ["localStorage"],
-    },
   });
 
-// Detect registry language after i18n init
-detectRegistryLanguage();
+// Load language from config after i18n init
+loadLanguageFromConfig();
 
 export default i18n;
