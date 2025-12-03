@@ -12,7 +12,8 @@ import { LANGUAGES } from "../../utils/constants";
 export default function LanguageSwitcher() {
   const { i18n, t } = useTranslation();
 
-  const currentLang = LANGUAGES.find((l) => l.key === i18n.language) || LANGUAGES[0];
+  const currentLang =
+    LANGUAGES.find((l) => l.key === i18n.language) || LANGUAGES[0];
 
   const handleLanguageChange = async (key: string) => {
     await i18n.changeLanguage(key);

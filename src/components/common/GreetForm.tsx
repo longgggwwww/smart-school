@@ -1,12 +1,6 @@
 import { useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import {
-  Button,
-  Input,
-  Card,
-  CardHeader,
-  CardBody,
-} from "@heroui/react";
+import { Button, Input, Card, CardHeader, CardBody } from "@heroui/react";
 import { invoke } from "@tauri-apps/api/core";
 
 interface GreetFormProps {
@@ -24,7 +18,7 @@ export default function GreetForm({ className }: GreetFormProps) {
 
   const handleGreet = useCallback(async () => {
     if (!name.trim()) return;
-    
+
     setIsLoading(true);
     try {
       const result = await invoke<string>("greet", { name });

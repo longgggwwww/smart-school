@@ -38,16 +38,14 @@ export async function saveLanguageToConfig(language: string): Promise<void> {
   }
 }
 
-i18n
-  .use(initReactI18next)
-  .init({
-    resources,
-    lng: DEFAULT_LANGUAGE,
-    fallbackLng: DEFAULT_LANGUAGE,
-    interpolation: {
-      escapeValue: false,
-    },
-  });
+i18n.use(initReactI18next).init({
+  resources,
+  lng: DEFAULT_LANGUAGE,
+  fallbackLng: DEFAULT_LANGUAGE,
+  interpolation: {
+    escapeValue: false,
+  },
+});
 
 // Load language from config after i18n init
 loadLanguageFromConfig();

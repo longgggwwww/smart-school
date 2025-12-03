@@ -8,7 +8,13 @@ import {
 } from "../types";
 
 // Re-export types for convenience
-export type { AppConfig, WindowConfig, Theme, ScreenMode, Language } from "../types";
+export type {
+  AppConfig,
+  WindowConfig,
+  Theme,
+  ScreenMode,
+  Language,
+} from "../types";
 
 /**
  * Custom error class for config-related errors
