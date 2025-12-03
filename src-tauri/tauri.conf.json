@@ -44,6 +44,8 @@
             "type": "downloadBootstrapper"
         },
         "wix": {
+            "fragmentPaths": ["./wix/fragments/registry.wxs"],
+            "componentGroupRefs": ["RegistryLanguageComponentGroup"],
             "language": {
                 "en-US": {
                     "localePath": "./wix/locales/en-US.wxl"

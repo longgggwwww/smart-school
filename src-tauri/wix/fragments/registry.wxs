@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <!-- Component to write installer language to registry for app i18n -->
+    <DirectoryRef Id="INSTALLDIR">
+      <Component Id="RegistryLanguageComponent" Guid="a1b2c3d4-e5f6-7890-abcd-ef1234567890">
+        <RegistryKey Root="HKCU" Key="Software\SmartClassroom" Action="createAndRemoveOnUninstall">
+          <RegistryValue Name="InstallerLanguage" Type="string" Value="!(loc.LanguageCode)" KeyPath="yes" />
+        </RegistryKey>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="RegistryLanguageComponentGroup">
+      <ComponentRef Id="RegistryLanguageComponent" />
+    </ComponentGroup>
+  </Fragment>
+</Wix>

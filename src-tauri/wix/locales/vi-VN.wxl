@@ -2,6 +2,9 @@
 <WixLocalization Culture="vi-VN" Codepage="65001"
     xmlns="http://schemas.microsoft.com/wix/2006/localization">
 
+    <!-- ======================= MÃ NGÔN NGỮ CHO APP ======================= -->
+    <String Id="LanguageCode">vi</String>
+
     <!-- ======================= TÊN ỨNG DỤNG ======================= -->
     <String Id="AppName">Phòng học thông minh</String>
 
