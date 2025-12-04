@@ -9,12 +9,11 @@ import {
   DropdownTrigger,
   DropdownMenu,
   DropdownItem,
-  Image,
   Form,
   ButtonGroup,
   Link,
+  Checkbox,
 } from "@heroui/react";
-import { TitleBar } from "../components";
 import { SavedAccount, AuthErrorCode } from "../types";
 import {
   login,
@@ -76,6 +75,7 @@ export default function LoginPage() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [savedAccounts, setSavedAccounts] = useState<SavedAccount[]>([]);
+  const [rememberMe, setRememberMe] = useState(true);
 
   // Load saved accounts on mount
   useEffect(() => {
@@ -101,7 +101,7 @@ export default function LoginPage() {
       const response = await login({
         username,
         password,
-        remember_me: true,
+        remember_me: rememberMe,
       });
       
       console.log("Login successful:", response);
@@ -160,14 +160,9 @@ export default function LoginPage() {
   };
 
   return (
-    <section className="flex flex-col h-screen bg-white dark:bg-gray-900">
-      {/* Reusable Title Bar - no back button on root route */}
-      <TitleBar rootRoutes={["/"]} />
-
+    <section className="flex flex-col h-full bg-white dark:bg-gray-900">
       {/* Login Content */}
-      <main className="flex-1 flex flex-col items-center pt-12 px-4">
-        {/* Logo */}
-        <Image src="/tauri.svg" alt="Logo" className="w-16 h-16 mb-3" />
+      <main className="flex-1 flex flex-col items-center pt-4 px-4">
         <h1 className="text-xl font-bold text-gray-800 dark:text-white">
           {t("auth.welcome")}
         </h1>
@@ -255,7 +250,14 @@ export default function LoginPage() {
             isInvalid={submitted && !password}
           />
 
-          <div className="w-full flex justify-end">
+          <div className="w-full flex justify-between items-center">
+            <Checkbox
+              size="sm"
+              isSelected={rememberMe}
+              onValueChange={setRememberMe}
+            >
+              {t("auth.rememberMe")}
+            </Checkbox>
             <Link
               size="sm"
               className="cursor-pointer"
@@ -295,11 +297,6 @@ export default function LoginPage() {
           )}
         </Form>
       </main>
-
-      {/* Footer */}
-      <footer className="text-center py-4 text-xs text-gray-500 dark:text-gray-400">
-        © 2025 Smart School. All rights reserved.
-      </footer>
     </section>
   );
 }

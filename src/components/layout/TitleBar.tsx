@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation } from "react-router-dom";
 import { getCurrentWindow } from "@tauri-apps/api/window";
 import { Button, Tooltip } from "@heroui/react";
+import { AnimatePresence, motion } from "framer-motion";
 import { LanguageSwitcher, ThemeSwitcher } from "../common";
 
 // Icons
@@ -187,19 +188,30 @@ export default function TitleBar({
     >
       {/* Left side - Back button, Theme/Language switchers */}
       <div className="flex items-center flex-1">
-        {canGoBack && (
-          <Tooltip content={t("common.back")} placement="bottom">
-            <Button
-              isIconOnly
-              variant="light"
-              radius="none"
-              onPress={handleBack}
-              className="min-w-9 w-9 h-8"
+        <AnimatePresence mode="wait">
+          {canGoBack && (
+            <motion.div
+              key="back-button"
+              initial={{ opacity: 0, width: 0 }}
+              animate={{ opacity: 1, width: "auto" }}
+              exit={{ opacity: 0, width: 0 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="overflow-hidden"
             >
-              <BackIcon />
-            </Button>
-          </Tooltip>
-        )}
+              <Tooltip content={t("common.back")} placement="bottom">
+                <Button
+                  isIconOnly
+                  variant="light"
+                  radius="none"
+                  onPress={handleBack}
+                  className="min-w-9 w-9 h-8"
+                >
+                  <BackIcon />
+                </Button>
+              </Tooltip>
+            </motion.div>
+          )}
+        </AnimatePresence>
         {showThemeSwitcher && <ThemeSwitcher titleBar />}
         {showLanguageSwitcher && <LanguageSwitcher />}
         {leftContent}

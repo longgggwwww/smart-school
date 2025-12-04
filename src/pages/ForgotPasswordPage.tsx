@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Button, Input, Image } from "@heroui/react";
-import { TitleBar } from "../components";
+import { Button, Input } from "@heroui/react";
 
 export default function ForgotPasswordPage() {
   const { t } = useTranslation();
@@ -21,14 +20,9 @@ export default function ForgotPasswordPage() {
   };
 
   return (
-    <section className="flex flex-col h-screen bg-white dark:bg-gray-900">
-      {/* Reusable Title Bar - back button auto shows on this deep route */}
-      <TitleBar rootRoutes={["/"]} />
-
+    <section className="flex flex-col h-full bg-white dark:bg-gray-900">
       {/* Content */}
-      <main className="flex-1 flex flex-col items-center pt-12 px-4">
-        {/* Logo */}
-        <Image src="/tauri.svg" alt="Logo" className="w-16 h-16 mb-3" />
+      <main className="flex-1 flex flex-col items-center pt-4 px-4">
         <h1 className="text-xl font-bold text-gray-800 dark:text-white">
           {t("auth.forgotPasswordTitle")}
         </h1>
@@ -67,11 +61,6 @@ export default function ForgotPasswordPage() {
           )}
         </div>
       </main>
-
-      {/* Footer */}
-      <footer className="text-center py-4 text-xs text-gray-500 dark:text-gray-400">
-        © 2025 Smart School. All rights reserved.
-      </footer>
     </section>
   );
 }
