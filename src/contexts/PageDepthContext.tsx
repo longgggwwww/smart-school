@@ -1,12 +1,10 @@
 import { createContext, useContext, useRef, useMemo, ReactNode } from "react";
 import { useLocation } from "react-router-dom";
 
-// Page depth for determining slide direction (higher = deeper page)
 const PAGE_DEPTH: Record<string, number> = {
   "/": 0,
   "/dashboard": 0,
   "/forgot-password": 1,
-  // Add more routes as needed
 };
 
 interface PageDepthContextType {
@@ -24,11 +22,9 @@ export function PageDepthProvider({ children }: { children: ReactNode }) {
   const directionRef = useRef<number>(1);
   const prevDepthRef = useRef<number>(0);
 
-  // Calculate depths
   const currentDepth = PAGE_DEPTH[location.pathname] ?? 0;
   const prevDepth = PAGE_DEPTH[prevPathRef.current ?? "/"] ?? 0;
 
-  // Only update direction when path actually changes
   if (
     prevPathRef.current !== null &&
     prevPathRef.current !== location.pathname
@@ -37,7 +33,6 @@ export function PageDepthProvider({ children }: { children: ReactNode }) {
     prevDepthRef.current = prevDepth;
   }
 
-  // Update prev path after calculating direction
   if (prevPathRef.current !== location.pathname) {
     prevPathRef.current = location.pathname;
   }
@@ -67,5 +62,4 @@ export function usePageDepth() {
   return context;
 }
 
-// Export PAGE_DEPTH for external use if needed
 export { PAGE_DEPTH };

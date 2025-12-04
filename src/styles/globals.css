@@ -10,7 +10,7 @@
 @custom-variant dark (&:is(.dark *));
 
 * {
-  font-family: 'Nunito sans', system-ui, sans-serif;
+  font-family: "Nunito sans", system-ui, sans-serif;
 }
 
 @layer utilities {
