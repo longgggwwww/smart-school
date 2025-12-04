@@ -6,7 +6,11 @@
     "greet": "Chào",
     "language": "Ngôn ngữ",
     "english": "Tiếng Anh",
-    "vietnamese": "Tiếng Việt"
+    "vietnamese": "Tiếng Việt",
+    "minimize": "Thu nhỏ",
+    "close": "Đóng",
+    "lightMode": "Chế độ sáng",
+    "darkMode": "Chế độ tối"
   },
   "home": {
     "title": "Trang chủ",
@@ -15,13 +19,15 @@
   "auth": {
     "welcome": "Smart School",
     "signInToContinue": "Đăng nhập để tiếp tục",
-    "email": "Email",
-    "emailPlaceholder": "Nhập email của bạn",
+    "username": "Tên đăng nhập",
+    "usernamePlaceholder": "Nhập tên đăng nhập",
     "password": "Mật khẩu",
-    "passwordPlaceholder": "Nhập mật khẩu của bạn",
+    "passwordPlaceholder": "Nhập mật khẩu",
     "signIn": "Đăng Nhập",
-    "forgotPassword": "Quên mật khẩu?",
-    "errorRequired": "Vui lòng nhập email và mật khẩu",
+    "idCard": "Thẻ ID",
+    "idCardTooltip": "Đăng nhập bằng thẻ ID",
+    "selectAccount": "Chọn tài khoản",
+    "errorRequired": "Vui lòng nhập tên đăng nhập và mật khẩu",
     "errorLogin": "Đăng nhập thất bại. Vui lòng thử lại."
   },
   "dashboard": {
