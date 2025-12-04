@@ -27,8 +27,19 @@
     "idCard": "ID Card",
     "idCardTooltip": "Sign in with ID card",
     "selectAccount": "Select account",
+    "removeAccount": "Remove from list",
+    "forgotPassword": "Forgot password?",
+    "forgotPasswordTitle": "Forgot Password",
+    "forgotPasswordDesc": "Enter your username to request password reset",
+    "requestTeacher": "Request Teacher",
+    "backToLogin": "Back to Login",
+    "errorUsernameRequired": "Please enter your username",
     "errorRequired": "Please enter username and password",
-    "errorLogin": "Login failed. Please try again."
+    "errorLogin": "Login failed. Please try again.",
+    "errorUserNotFound": "User not found",
+    "errorInvalidCredentials": "Invalid username or password",
+    "errorAccountLocked": "Account is locked. Please contact administrator.",
+    "errorAccountInactive": "Account is not activated"
   },
   "dashboard": {
     "home": "Home",

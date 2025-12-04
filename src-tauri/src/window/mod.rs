@@ -3,13 +3,31 @@ use tauri::Manager;
 /// Opens the main dashboard window and closes the login window
 #[tauri::command]
 pub async fn open_main_window(app: tauri::AppHandle) -> Result<(), String> {
-    // Show main window
-    if let Some(main_window) = app.get_webview_window("main") {
-        main_window.show().map_err(|e| e.to_string())?;
-        main_window.set_focus().map_err(|e| e.to_string())?;
-    } else {
-        return Err("Main window not found".to_string());
-    }
+    // Try to get existing main window, or create a new one
+    let main_window = match app.get_webview_window("main") {
+        Some(window) => window,
+        None => {
+            // Create new main window if it doesn't exist
+            tauri::WebviewWindowBuilder::new(
+                &app,
+                "main",
+                tauri::WebviewUrl::App("/dashboard".into()),
+            )
+            .title("Smart School")
+            .inner_size(1200.0, 800.0)
+            .min_inner_size(800.0, 600.0)
+            .resizable(true)
+            .center()
+            .decorations(true)
+            .visible(false)
+            .build()
+            .map_err(|e| e.to_string())?
+        }
+    };
+
+    // Show and focus main window
+    main_window.show().map_err(|e| e.to_string())?;
+    main_window.set_focus().map_err(|e| e.to_string())?;
 
     // Close login window
     if let Some(login_window) = app.get_webview_window("login") {
