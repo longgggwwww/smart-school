@@ -6,7 +6,11 @@
     "greet": "Greet",
     "language": "Language",
     "english": "English",
-    "vietnamese": "Vietnamese"
+    "vietnamese": "Vietnamese",
+    "minimize": "Minimize",
+    "close": "Close",
+    "lightMode": "Light mode",
+    "darkMode": "Dark mode"
   },
   "home": {
     "title": "Home",
@@ -15,13 +19,15 @@
   "auth": {
     "welcome": "Smart School",
     "signInToContinue": "Sign in to continue",
-    "email": "Email",
-    "emailPlaceholder": "Enter your email",
+    "username": "Username",
+    "usernamePlaceholder": "Enter your username",
     "password": "Password",
-    "passwordPlaceholder": "Enter your password",
+    "passwordPlaceholder": "Enter password",
     "signIn": "Sign In",
-    "forgotPassword": "Forgot password?",
-    "errorRequired": "Please enter email and password",
+    "idCard": "ID Card",
+    "idCardTooltip": "Sign in with ID card",
+    "selectAccount": "Select account",
+    "errorRequired": "Please enter username and password",
     "errorLogin": "Login failed. Please try again."
   },
   "dashboard": {

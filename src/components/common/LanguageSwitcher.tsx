@@ -24,7 +24,7 @@ export default function LanguageSwitcher() {
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Button variant="bordered" size="sm">
+        <Button variant="light" size="sm" radius="none">
           {currentLang.label}
         </Button>
       </DropdownTrigger>

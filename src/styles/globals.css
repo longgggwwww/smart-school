@@ -1,7 +1,17 @@
 @import "tailwindcss";
+@import "@fontsource/nunito-sans/300.css";
+@import "@fontsource/nunito-sans/400.css";
+@import "@fontsource/nunito-sans/500.css";
+@import "@fontsource/nunito-sans/600.css";
+@import "@fontsource/nunito-sans/700.css";
+
 @plugin '../../hero.ts';
 @source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
 @custom-variant dark (&:is(.dark *));
+
+* {
+  font-family: 'Nunito sans', system-ui, sans-serif;
+}
 
 @layer utilities {
   .animate-spin-slow {
