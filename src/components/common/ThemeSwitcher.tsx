@@ -24,7 +24,9 @@ interface ThemeSwitcherProps {
   titleBar?: boolean;
 }
 
-export default function ThemeSwitcher({ titleBar = false }: ThemeSwitcherProps) {
+export default function ThemeSwitcher({
+  titleBar = false,
+}: ThemeSwitcherProps) {
   const { t } = useTranslation();
   const { theme, setTheme } = useTheme();
 
@@ -72,12 +74,7 @@ export default function ThemeSwitcher({ titleBar = false }: ThemeSwitcherProps) 
       content={isDark ? t("common.lightMode") : t("common.darkMode")}
       placement="bottom"
     >
-      <Button
-        isIconOnly
-        variant="light"
-        size="sm"
-        onPress={toggleTheme}
-      >
+      <Button isIconOnly variant="light" size="sm" onPress={toggleTheme}>
         {isDark ? <SunIcon /> : <MoonIcon />}
       </Button>
     </Tooltip>

@@ -97,13 +97,13 @@ export default function LoginPage() {
 
     try {
       console.log("Starting login with:", { username, password: "***" });
-      
+
       const response = await login({
         username,
         password,
         remember_me: rememberMe,
       });
-      
+
       console.log("Login successful:", response);
 
       // Open main window and close login window
@@ -114,7 +114,7 @@ export default function LoginPage() {
       console.error("Login error:", err);
       console.error("Error name:", (err as Error)?.name);
       console.error("Error constructor:", (err as Error)?.constructor?.name);
-      
+
       // Check by error name since instanceof may not work across module boundaries
       const error = err as AuthError;
       if (error?.name === "AuthError" && error?.code) {

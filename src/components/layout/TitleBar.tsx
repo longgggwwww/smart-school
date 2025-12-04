@@ -14,15 +14,28 @@ const MinusIcon = () => (
 );
 
 const MaximizeIcon = () => (
-  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <svg
+    className="w-3 h-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
     <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth={2} />
   </svg>
 );
 
 const RestoreIcon = () => (
-  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <svg
+    className="w-3 h-3"
+    fill="none"
+    stroke="currentColor"
+    viewBox="0 0 24 24"
+  >
     <rect x="6" y="6" width="12" height="12" rx="1" strokeWidth={2} />
-    <path d="M8 6V5a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1h-1" strokeWidth={2} />
+    <path
+      d="M8 6V5a1 1 0 011-1h10a1 1 0 011 1v10a1 1 0 01-1 1h-1"
+      strokeWidth={2}
+    />
   </svg>
 );
 
@@ -219,9 +232,7 @@ export default function TitleBar({
 
       {/* Center - Custom center content */}
       {centerContent && (
-        <div className="flex items-center justify-center">
-          {centerContent}
-        </div>
+        <div className="flex items-center justify-center">{centerContent}</div>
       )}
 
       {/* Right side - Custom content + Window controls */}
@@ -242,9 +253,7 @@ export default function TitleBar({
         )}
         {showMaximize && (
           <Tooltip
-            content={
-              isMaximized ? t("common.restore") : t("common.maximize")
-            }
+            content={isMaximized ? t("common.restore") : t("common.maximize")}
             placement="bottom"
           >
             <Button
