@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { getCurrentWindow } from "@tauri-apps/api/window";
+import { useNavigate } from "react-router-dom";
 import {
   Button,
   Input,
@@ -14,7 +14,7 @@ import {
   ButtonGroup,
   Link,
 } from "@heroui/react";
-import { LanguageSwitcher, ThemeSwitcher } from "../components";
+import { TitleBar } from "../components";
 import { SavedAccount, AuthErrorCode } from "../types";
 import {
   login,
@@ -57,22 +57,6 @@ const NfcIcon = () => (
   </svg>
 );
 
-const MinusIcon = () => (
-  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-    <path d="M5 10h10a1 1 0 110 2H5a1 1 0 110-2z" />
-  </svg>
-);
-
-const CloseIcon = () => (
-  <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-    <path
-      fillRule="evenodd"
-      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-      clipRule="evenodd"
-    />
-  </svg>
-);
-
 const CloseSmallIcon = () => (
   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
     <path
@@ -83,30 +67,11 @@ const CloseSmallIcon = () => (
   </svg>
 );
 
-const BackIcon = () => (
-  <svg
-    className="w-4 h-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M15 19l-7-7 7-7"
-    />
-  </svg>
-);
-
-type ViewType = "login" | "forgotPassword";
-
 export default function LoginPage() {
   const { t } = useTranslation();
-  const [currentView, setCurrentView] = useState<ViewType>("login");
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [forgotUsername, setForgotUsername] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
@@ -191,279 +156,144 @@ export default function LoginPage() {
   };
 
   const handleForgotPassword = () => {
-    setForgotUsername(username);
-    setCurrentView("forgotPassword");
-    setError("");
-    setSubmitted(false);
-  };
-
-  const handleBackToLogin = () => {
-    setCurrentView("login");
-    setError("");
-    setSubmitted(false);
-  };
-
-  const handleRequestTeacher = () => {
-    // TODO: Implement request teacher for password reset
-    setSubmitted(true);
-    if (!forgotUsername) {
-      setError(t("auth.errorUsernameRequired"));
-      return;
-    }
-    console.log("Request teacher for:", forgotUsername);
-    // Show success message or navigate
-  };
-
-  // Handle mouse back button
-  useEffect(() => {
-    const handleMouseBack = (e: MouseEvent) => {
-      // Mouse button 3 is the back button
-      if (e.button === 3 && currentView === "forgotPassword") {
-        e.preventDefault();
-        handleBackToLogin();
-      }
-    };
-
-    window.addEventListener("mouseup", handleMouseBack);
-    return () => window.removeEventListener("mouseup", handleMouseBack);
-  }, [currentView]);
-
-  const handleClose = async () => {
-    const currentWindow = getCurrentWindow();
-    await currentWindow.close();
-  };
-
-  const handleMinimize = async () => {
-    const currentWindow = getCurrentWindow();
-    await currentWindow.minimize();
-  };
-
-  const handleDrag = async () => {
-    const currentWindow = getCurrentWindow();
-    await currentWindow.startDragging();
+    navigate("/forgot-password");
   };
 
   return (
     <section className="flex flex-col h-screen bg-white dark:bg-gray-900">
-      {/* Simple Title Bar - just minimize and close buttons */}
-      <header
-        className="flex items-center justify-between h-8 cursor-move select-none"
-        onMouseDown={handleDrag}
-      >
-        <div
-          className="flex items-center"
-          onMouseDown={(e) => e.stopPropagation()}
-        >
-          <ThemeSwitcher titleBar />
-          <LanguageSwitcher />
-        </div>
-        <div className="flex" onMouseDown={(e) => e.stopPropagation()}>
-          <Tooltip content={t("common.minimize")} placement="bottom">
-            <Button
-              isIconOnly
-              variant="light"
-              radius="none"
-              onPress={handleMinimize}
-              className="min-w-9 w-9 h-8 data-[hover=true]:bg-yellow-500 data-[hover=true]:text-white"
-            >
-              <MinusIcon />
-            </Button>
-          </Tooltip>
-          <Tooltip content={t("common.close")} placement="bottom">
-            <Button
-              isIconOnly
-              variant="light"
-              radius="none"
-              onPress={handleClose}
-              className="min-w-9 w-9 h-8 data-[hover=true]:bg-red-500 data-[hover=true]:text-white"
-            >
-              <CloseIcon />
-            </Button>
-          </Tooltip>
-        </div>
-      </header>
+      {/* Reusable Title Bar - no back button on root route */}
+      <TitleBar rootRoutes={["/"]} />
 
-      {/* Login Content - full width */}
+      {/* Login Content */}
       <main className="flex-1 flex flex-col items-center pt-12 px-4">
         {/* Logo */}
         <Image src="/tauri.svg" alt="Logo" className="w-16 h-16 mb-3" />
         <h1 className="text-xl font-bold text-gray-800 dark:text-white">
-          {currentView === "login"
-            ? t("auth.welcome")
-            : t("auth.forgotPasswordTitle")}
+          {t("auth.welcome")}
         </h1>
         <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
-          {currentView === "login"
-            ? t("auth.signInToContinue")
-            : t("auth.forgotPasswordDesc")}
+          {t("auth.signInToContinue")}
         </p>
 
-        {currentView === "login" ? (
-          <Form
-            onSubmit={handleLogin}
-            className="flex flex-col gap-3 w-full max-w-sm"
-          >
-            <Input
-              name="username"
-              type="text"
-              label={t("auth.username")}
-              placeholder={t("auth.usernamePlaceholder")}
-              value={username}
-              onValueChange={(value) => {
-                setUsername(value);
-                if (error) setError("");
-              }}
-              isInvalid={submitted && !username}
-              endContent={
-                savedAccounts.length > 0 && (
-                  <Dropdown>
-                    <DropdownTrigger>
-                      <Button
-                        isIconOnly
-                        variant="light"
-                        className="min-w-6 w-6 h-6"
-                      >
-                        <ChevronDownIcon />
-                      </Button>
-                    </DropdownTrigger>
-                    <DropdownMenu
-                      aria-label={t("auth.selectAccount")}
-                      onAction={(key) => {
-                        const account = savedAccounts.find(
-                          (a) => a.user_id === key
-                        );
-                        if (account) handleSelectAccount(account);
-                      }}
+        <Form
+          onSubmit={handleLogin}
+          className="flex flex-col gap-3 w-full max-w-sm"
+        >
+          <Input
+            name="username"
+            type="text"
+            label={t("auth.username")}
+            placeholder={t("auth.usernamePlaceholder")}
+            value={username}
+            onValueChange={(value) => {
+              setUsername(value);
+              if (error) setError("");
+            }}
+            isInvalid={submitted && !username}
+            endContent={
+              savedAccounts.length > 0 && (
+                <Dropdown>
+                  <DropdownTrigger>
+                    <Button
+                      isIconOnly
+                      variant="light"
+                      className="min-w-6 w-6 h-6"
                     >
-                      {savedAccounts.map((account) => (
-                        <DropdownItem
-                          key={account.user_id}
-                          endContent={
-                            <Tooltip content={t("auth.removeAccount")}>
-                              <Button
-                                isIconOnly
-                                size="sm"
-                                variant="light"
-                                className="min-w-6 w-6 h-6 text-danger"
-                                onPress={(e) =>
-                                  handleRemoveAccount(
-                                    e as unknown as React.MouseEvent,
-                                    account.user_id
-                                  )
-                                }
-                              >
-                                <CloseSmallIcon />
-                              </Button>
-                            </Tooltip>
-                          }
-                        >
-                          {account.full_name} ({account.username})
-                        </DropdownItem>
-                      ))}
-                    </DropdownMenu>
-                  </Dropdown>
-                )
-              }
-            />
+                      <ChevronDownIcon />
+                    </Button>
+                  </DropdownTrigger>
+                  <DropdownMenu
+                    aria-label={t("auth.selectAccount")}
+                    onAction={(key) => {
+                      const account = savedAccounts.find(
+                        (a) => a.user_id === key
+                      );
+                      if (account) handleSelectAccount(account);
+                    }}
+                  >
+                    {savedAccounts.map((account) => (
+                      <DropdownItem
+                        key={account.user_id}
+                        endContent={
+                          <Tooltip content={t("auth.removeAccount")}>
+                            <Button
+                              isIconOnly
+                              size="sm"
+                              variant="light"
+                              className="min-w-6 w-6 h-6 text-danger"
+                              onPress={(e) =>
+                                handleRemoveAccount(
+                                  e as unknown as React.MouseEvent,
+                                  account.user_id
+                                )
+                              }
+                            >
+                              <CloseSmallIcon />
+                            </Button>
+                          </Tooltip>
+                        }
+                      >
+                        {account.full_name} ({account.username})
+                      </DropdownItem>
+                    ))}
+                  </DropdownMenu>
+                </Dropdown>
+              )
+            }
+          />
 
-            <Input
-              name="password"
-              type="password"
-              label={t("auth.password")}
-              placeholder={t("auth.passwordPlaceholder")}
-              value={password}
-              onValueChange={(value) => {
-                setPassword(value);
-                if (error) setError("");
-              }}
-              isInvalid={submitted && !password}
-            />
+          <Input
+            name="password"
+            type="password"
+            label={t("auth.password")}
+            placeholder={t("auth.passwordPlaceholder")}
+            value={password}
+            onValueChange={(value) => {
+              setPassword(value);
+              if (error) setError("");
+            }}
+            isInvalid={submitted && !password}
+          />
 
-            <div className="w-full flex justify-end">
-              <Link
-                size="sm"
-                className="cursor-pointer"
-                onPress={handleForgotPassword}
-              >
-                {t("auth.forgotPassword")}
-              </Link>
-            </div>
-
-            <hr className="w-full border-t border-gray-200 dark:border-gray-700 mb-2" />
-
-            <ButtonGroup className="w-full">
-              <Button
-                type="submit"
-                color="primary"
-                className="flex-1"
-                isLoading={isLoading}
-              >
-                {t("auth.signIn")}
-              </Button>
-
-              <Tooltip
-                content={t("auth.idCardTooltip")}
-                placement="bottom"
-                showArrow
-              >
-                <Button
-                  type="button"
-                  variant="solid"
-                  startContent={<NfcIcon />}
-                >
-                  {t("auth.idCard")}
-                </Button>
-              </Tooltip>
-            </ButtonGroup>
-
-            {error && (
-              <p className="w-full text-sm text-red-500 text-center mt-6">
-                {error}
-              </p>
-            )}
-          </Form>
-        ) : (
-          /* Forgot Password View */
-          <div className="flex flex-col gap-3 w-full max-w-sm">
-            <Input
-              name="forgotUsername"
-              type="text"
-              label={t("auth.username")}
-              placeholder={t("auth.usernamePlaceholder")}
-              value={forgotUsername}
-              onValueChange={(value) => {
-                setForgotUsername(value);
-                if (error) setError("");
-              }}
-              isInvalid={submitted && !forgotUsername}
-            />
-
-            <hr className="w-full border-t border-gray-200 dark:border-gray-700 my-2" />
-
-            <Button
-              color="primary"
-              className="w-full"
-              onPress={handleRequestTeacher}
+          <div className="w-full flex justify-end">
+            <Link
+              size="sm"
+              className="cursor-pointer"
+              onPress={handleForgotPassword}
             >
-              {t("auth.requestTeacher")}
-            </Button>
-
-            <Button
-              variant="light"
-              className="w-full"
-              startContent={<BackIcon />}
-              onPress={handleBackToLogin}
-            >
-              {t("auth.backToLogin")}
-            </Button>
-
-            {error && (
-              <p className="w-full text-sm text-red-500 text-center mt-4">
-                {error}
-              </p>
-            )}
+              {t("auth.forgotPassword")}
+            </Link>
           </div>
-        )}
+
+          <hr className="w-full border-t border-gray-200 dark:border-gray-700 mb-2" />
+
+          <ButtonGroup className="w-full">
+            <Button
+              type="submit"
+              color="primary"
+              className="flex-1"
+              isLoading={isLoading}
+            >
+              {t("auth.signIn")}
+            </Button>
+
+            <Tooltip
+              content={t("auth.idCardTooltip")}
+              placement="bottom"
+              showArrow
+            >
+              <Button type="button" variant="solid" startContent={<NfcIcon />}>
+                {t("auth.idCard")}
+              </Button>
+            </Tooltip>
+          </ButtonGroup>
+
+          {error && (
+            <p className="w-full text-sm text-red-500 text-center mt-6">
+              {error}
+            </p>
+          )}
+        </Form>
       </main>
 
       {/* Footer */}

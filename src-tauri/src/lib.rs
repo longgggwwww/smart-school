@@ -5,7 +5,7 @@ use config::{
     get_app_language, get_app_theme, get_auto_start, get_config, get_window_state, greet,
     save_window_state, set_app_language, set_app_theme, set_auto_start, set_config,
 };
-use window::{close_window, logout_to_login, minimize_window, open_main_window};
+use window::{close_window, logout_to_auth, minimize_window, open_main_window};
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
@@ -29,7 +29,7 @@ pub fn run() {
             get_auto_start,
             // Window management
             open_main_window,
-            logout_to_login,
+            logout_to_auth,
             close_window,
             minimize_window,
         ])
