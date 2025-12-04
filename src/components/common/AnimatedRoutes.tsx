@@ -41,7 +41,10 @@ export default function AnimatedRoutes() {
   const prevDepth = PAGE_DEPTH[prevPathRef.current ?? "/"] ?? 0;
 
   // Only update direction when path actually changes
-  if (prevPathRef.current !== null && prevPathRef.current !== location.pathname) {
+  if (
+    prevPathRef.current !== null &&
+    prevPathRef.current !== location.pathname
+  ) {
     directionRef.current = currentDepth > prevDepth ? 1 : -1;
   }
 
