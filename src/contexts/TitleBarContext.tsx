@@ -25,7 +25,8 @@ const defaultConfig: Partial<TitleBarProps> = {
 const TitleBarContext = createContext<TitleBarContextType | null>(null);
 
 export function TitleBarProvider({ children }: { children: ReactNode }) {
-  const [config, setConfigState] = useState<Partial<TitleBarProps>>(defaultConfig);
+  const [config, setConfigState] =
+    useState<Partial<TitleBarProps>>(defaultConfig);
 
   const setConfig = useCallback((newConfig: Partial<TitleBarProps>) => {
     setConfigState((prev) => ({ ...prev, ...newConfig }));
