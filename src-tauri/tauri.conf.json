@@ -12,8 +12,8 @@
   "app": {
     "windows": [
       {
-        "label": "login",
-        "title": "Smart School - Login",
+        "label": "auth",
+        "title": "Smart School - Auth",
         "url": "/",
         "width": 450,
         "height": 600,
@@ -27,13 +27,13 @@
       {
         "label": "main",
         "title": "Smart School",
-        "url": "/dashboard",
+        "url": "/#/dashboard",
         "width": 1200,
         "height": 800,
         "resizable": true,
         "center": true,
         "visible": false,
-        "decorations": true,
+        "decorations": false,
         "minWidth": 800,
         "minHeight": 600
       }

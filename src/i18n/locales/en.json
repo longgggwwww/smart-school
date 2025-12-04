@@ -8,7 +8,12 @@
     "english": "English",
     "vietnamese": "Vietnamese",
     "minimize": "Minimize",
+    "maximize": "Maximize",
+    "restore": "Restore",
+    "fullscreen": "Fullscreen",
+    "exitFullscreen": "Exit Fullscreen",
     "close": "Close",
+    "back": "Back",
     "lightMode": "Light mode",
     "darkMode": "Dark mode"
   },

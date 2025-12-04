@@ -8,7 +8,12 @@
     "english": "Tiếng Anh",
     "vietnamese": "Tiếng Việt",
     "minimize": "Thu nhỏ",
+    "maximize": "Phóng to",
+    "restore": "Khôi phục",
+    "fullscreen": "Toàn màn hình",
+    "exitFullscreen": "Thoát toàn màn hình",
     "close": "Đóng",
+    "back": "Quay lại",
     "lightMode": "Chế độ sáng",
     "darkMode": "Chế độ tối"
   },

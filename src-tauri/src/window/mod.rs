@@ -11,14 +11,14 @@ pub async fn open_main_window(app: tauri::AppHandle) -> Result<(), String> {
             tauri::WebviewWindowBuilder::new(
                 &app,
                 "main",
-                tauri::WebviewUrl::App("/dashboard".into()),
+                tauri::WebviewUrl::App("/#/dashboard".into()),
             )
             .title("Smart School")
             .inner_size(1200.0, 800.0)
             .min_inner_size(800.0, 600.0)
             .resizable(true)
             .center()
-            .decorations(true)
+            .decorations(false)
             .visible(false)
             .build()
             .map_err(|e| e.to_string())?
@@ -29,24 +29,24 @@ pub async fn open_main_window(app: tauri::AppHandle) -> Result<(), String> {
     main_window.show().map_err(|e| e.to_string())?;
     main_window.set_focus().map_err(|e| e.to_string())?;
 
-    // Close login window
-    if let Some(login_window) = app.get_webview_window("login") {
-        login_window.close().map_err(|e| e.to_string())?;
+    // Close auth window
+    if let Some(auth_window) = app.get_webview_window("auth") {
+        auth_window.close().map_err(|e| e.to_string())?;
     }
 
     Ok(())
 }
 
-/// Logs out from dashboard and returns to login window
+/// Logs out from dashboard and returns to auth window
 #[tauri::command]
-pub async fn logout_to_login(app: tauri::AppHandle) -> Result<(), String> {
-    // Create and show new login window
-    let login_window = tauri::WebviewWindowBuilder::new(
+pub async fn logout_to_auth(app: tauri::AppHandle) -> Result<(), String> {
+    // Create and show new auth window
+    let auth_window = tauri::WebviewWindowBuilder::new(
         &app,
-        "login",
+        "auth",
         tauri::WebviewUrl::App("/".into()),
     )
-    .title("Smart School - Login")
+    .title("Smart School - Auth")
     .inner_size(450.0, 600.0)
     .resizable(false)
     .center()
@@ -54,8 +54,8 @@ pub async fn logout_to_login(app: tauri::AppHandle) -> Result<(), String> {
     .build()
     .map_err(|e| e.to_string())?;
 
-    login_window.show().map_err(|e| e.to_string())?;
-    login_window.set_focus().map_err(|e| e.to_string())?;
+    auth_window.show().map_err(|e| e.to_string())?;
+    auth_window.set_focus().map_err(|e| e.to_string())?;
 
     // Close main window
     if let Some(main_window) = app.get_webview_window("main") {

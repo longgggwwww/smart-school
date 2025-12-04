@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { HeroUIProvider, ToastProvider } from "@heroui/react";
-import { LoginPage, DashboardPage } from "./pages";
+import { LoginPage, DashboardPage, ForgotPasswordPage } from "./pages";
 import "./i18n";
 import "./styles/globals.css";
 
@@ -10,12 +10,13 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <HeroUIProvider>
       <ToastProvider placement="top-center" />
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<LoginPage />} />
+          <Route path="/forgot-password" element={<ForgotPasswordPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </HeroUIProvider>
   </React.StrictMode>
 );
