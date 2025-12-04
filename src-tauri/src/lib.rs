@@ -2,8 +2,9 @@ mod config;
 mod window;
 
 use config::{
-    get_app_language, get_app_theme, get_auto_start, get_config, get_window_state, greet,
-    save_window_state, set_app_language, set_app_theme, set_auto_start, set_config,
+    get_app_language, get_app_theme, get_auto_start, get_config, get_nfc_enabled,
+    get_remember_me_default, get_window_state, greet, save_window_state, set_app_language,
+    set_app_theme, set_auto_start, set_config, set_nfc_enabled, set_remember_me_default,
 };
 use window::{close_window, logout_to_auth, minimize_window, open_main_window};
 
@@ -27,6 +28,10 @@ pub fn run() {
             get_window_state,
             set_auto_start,
             get_auto_start,
+            get_remember_me_default,
+            set_remember_me_default,
+            get_nfc_enabled,
+            set_nfc_enabled,
             // Window management
             open_main_window,
             logout_to_auth,

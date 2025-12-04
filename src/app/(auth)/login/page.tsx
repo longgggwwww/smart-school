@@ -21,6 +21,8 @@ import {
   removeSavedAccount,
   openMainWindow,
   AuthError,
+  getRememberMeDefault,
+  getNfcEnabled,
 } from "../../../services";
 
 // Icons
@@ -75,11 +77,14 @@ export default function LoginPage() {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
   const [savedAccounts, setSavedAccounts] = useState<SavedAccount[]>([]);
-  const [rememberMe, setRememberMe] = useState(true);
+  const [rememberMe, setRememberMe] = useState(false);
+  const [nfcEnabled, setNfcEnabled] = useState(false);
 
-  // Load saved accounts on mount
+  // Load saved accounts and config on mount
   useEffect(() => {
     getSavedAccounts().then(setSavedAccounts);
+    getRememberMeDefault().then(setRememberMe);
+    getNfcEnabled().then(setNfcEnabled);
   }, []);
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -279,15 +284,21 @@ export default function LoginPage() {
               {t("auth.signIn")}
             </Button>
 
-            <Tooltip
-              content={t("auth.idCardTooltip")}
-              placement="bottom"
-              showArrow
-            >
-              <Button type="button" variant="solid" startContent={<NfcIcon />}>
-                {t("auth.idCard")}
-              </Button>
-            </Tooltip>
+            {nfcEnabled && (
+              <Tooltip
+                content={t("auth.idCardTooltip")}
+                placement="bottom"
+                showArrow
+              >
+                <Button
+                  type="button"
+                  variant="solid"
+                  startContent={<NfcIcon />}
+                >
+                  {t("auth.idCard")}
+                </Button>
+              </Tooltip>
+            )}
           </ButtonGroup>
 
           {error && (

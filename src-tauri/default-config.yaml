@@ -19,3 +19,8 @@ window:
 # Startup settings
 startup:
   auto_start: false
+
+# Authentication settings
+auth:
+  remember_me_default: false
+  nfc_enabled: false
