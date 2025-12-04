@@ -73,6 +73,13 @@ impl Default for WindowConfig {
     }
 }
 
+/// Authentication configuration
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct AuthConfig {
+    pub remember_me_default: bool,
+    pub nfc_enabled: bool,
+}
+
 /// Startup configuration
 #[derive(Debug, Clone, Serialize, Deserialize, Default)]
 pub struct StartupConfig {
@@ -91,6 +98,8 @@ pub struct AppConfig {
     pub window: WindowConfig,
     /// Startup settings
     pub startup: StartupConfig,
+    /// Authentication settings
+    pub auth: AuthConfig,
 }
 
 impl Default for AppConfig {
@@ -100,6 +109,7 @@ impl Default for AppConfig {
             theme: Theme::System,
             window: WindowConfig::default(),
             startup: StartupConfig::default(),
+            auth: AuthConfig::default(),
         }
     }
 }

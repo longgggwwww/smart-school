@@ -32,6 +32,14 @@ export interface StartupConfig {
 }
 
 /**
+ * Authentication configuration
+ */
+export interface AuthConfig {
+  remember_me_default: boolean;
+  nfc_enabled: boolean;
+}
+
+/**
  * Main application configuration
  */
 export interface AppConfig {
@@ -39,6 +47,7 @@ export interface AppConfig {
   theme: Theme;
   window: WindowConfig;
   startup: StartupConfig;
+  auth: AuthConfig;
 }
 
 /**
@@ -56,6 +65,10 @@ export const DEFAULT_CONFIG: AppConfig = {
   },
   startup: {
     auto_start: false,
+  },
+  auth: {
+    remember_me_default: false,
+    nfc_enabled: false,
   },
 };
 

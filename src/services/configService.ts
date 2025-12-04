@@ -190,3 +190,45 @@ export async function isAutoStartEnabled(): Promise<boolean> {
     return false;
   }
 }
+
+// ============================================================================
+// Auth Config Operations
+// ============================================================================
+
+/**
+ * Get the remember me default setting from config
+ */
+export async function getRememberMeDefault(): Promise<boolean> {
+  try {
+    return await safeInvoke<boolean>("get_remember_me_default");
+  } catch (error) {
+    console.error("Failed to get remember me default:", error);
+    return DEFAULT_CONFIG.auth.remember_me_default;
+  }
+}
+
+/**
+ * Set the remember me default setting in config
+ */
+export async function setRememberMeDefault(enabled: boolean): Promise<void> {
+  await safeInvoke("set_remember_me_default", { enabled });
+}
+
+/**
+ * Get the NFC enabled setting from config
+ */
+export async function getNfcEnabled(): Promise<boolean> {
+  try {
+    return await safeInvoke<boolean>("get_nfc_enabled");
+  } catch (error) {
+    console.error("Failed to get NFC enabled setting:", error);
+    return DEFAULT_CONFIG.auth.nfc_enabled;
+  }
+}
+
+/**
+ * Set the NFC enabled setting in config
+ */
+export async function setNfcEnabled(enabled: boolean): Promise<void> {
+  await safeInvoke("set_nfc_enabled", { enabled });
+}

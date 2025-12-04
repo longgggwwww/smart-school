@@ -101,6 +101,36 @@ pub fn get_auto_start(app: tauri::AppHandle) -> bool {
     config.startup.auto_start
 }
 
+/// Get remember me default setting
+#[tauri::command]
+pub fn get_remember_me_default(app: tauri::AppHandle) -> bool {
+    let config = load_config(&app);
+    config.auth.remember_me_default
+}
+
+/// Set remember me default setting
+#[tauri::command]
+pub fn set_remember_me_default(app: tauri::AppHandle, enabled: bool) -> Result<(), String> {
+    let mut config = load_config(&app);
+    config.auth.remember_me_default = enabled;
+    save_config(&app, &config).map_err(|e| e.to_string())
+}
+
+/// Get NFC enabled setting
+#[tauri::command]
+pub fn get_nfc_enabled(app: tauri::AppHandle) -> bool {
+    let config = load_config(&app);
+    config.auth.nfc_enabled
+}
+
+/// Set NFC enabled setting
+#[tauri::command]
+pub fn set_nfc_enabled(app: tauri::AppHandle, enabled: bool) -> Result<(), String> {
+    let mut config = load_config(&app);
+    config.auth.nfc_enabled = enabled;
+    save_config(&app, &config).map_err(|e| e.to_string())
+}
+
 /// Simple greet command for testing
 #[tauri::command]
 pub fn greet(name: &str) -> String {
