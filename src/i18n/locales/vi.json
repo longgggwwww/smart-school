@@ -27,8 +27,19 @@
     "idCard": "Thẻ ID",
     "idCardTooltip": "Đăng nhập bằng thẻ ID",
     "selectAccount": "Chọn tài khoản",
+    "removeAccount": "Xóa khỏi danh sách",
+    "forgotPassword": "Quên mật khẩu?",
+    "forgotPasswordTitle": "Quên mật khẩu",
+    "forgotPasswordDesc": "Nhập tên đăng nhập để yêu cầu đặt lại mật khẩu",
+    "requestTeacher": "Yêu cầu giáo viên",
+    "backToLogin": "Quay lại đăng nhập",
+    "errorUsernameRequired": "Vui lòng nhập tên đăng nhập",
     "errorRequired": "Vui lòng nhập tên đăng nhập và mật khẩu",
-    "errorLogin": "Đăng nhập thất bại. Vui lòng thử lại."
+    "errorLogin": "Đăng nhập thất bại. Vui lòng thử lại.",
+    "errorUserNotFound": "Không tìm thấy người dùng",
+    "errorInvalidCredentials": "Tên đăng nhập hoặc mật khẩu không đúng",
+    "errorAccountLocked": "Tài khoản đã bị khóa. Vui lòng liên hệ quản trị viên.",
+    "errorAccountInactive": "Tài khoản chưa được kích hoạt"
   },
   "dashboard": {
     "home": "Trang chủ",
