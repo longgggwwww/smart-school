@@ -20,6 +20,7 @@ import {
 import { TitleBar } from "../../../components";
 import { getStoredUser } from "../../../services";
 import { AuthUser, UserRoleType } from "../../../types";
+import { useWindowStateSync } from "../../../hooks";
 
 // Fullscreen icon
 const FullscreenIcon = () => (
@@ -78,6 +79,9 @@ export default function DashboardPage() {
   const [isLoggingOut, setIsLoggingOut] = useState(false);
   const [currentUser, setCurrentUser] = useState<AuthUser | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
+
+  // Auto-sync window state to config file
+  useWindowStateSync();
 
   // Load current user on mount
   useEffect(() => {

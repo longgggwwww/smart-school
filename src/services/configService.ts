@@ -139,7 +139,7 @@ export async function saveWindowState(state: WindowConfig): Promise<void> {
     height: state.height,
     x: state.x,
     y: state.y,
-    screenMode: state.screen_mode,
+    screen_mode: state.screen_mode,
   });
 }
 
