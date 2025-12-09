@@ -15,8 +15,8 @@
         "label": "auth",
         "title": "Smart School - Auth",
         "url": "/",
-        "width": 450,
-        "height": 600,
+        "width": 375,
+        "height": 667,
         "resizable": false,
         "center": true,
         "visible": true,
@@ -34,8 +34,8 @@
         "center": true,
         "visible": false,
         "decorations": false,
-        "minWidth": 800,
-        "minHeight": 600
+        "minWidth": 360,
+        "minHeight": 640
       }
     ],
     "security": {

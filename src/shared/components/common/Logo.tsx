@@ -1,54 +1,47 @@
 /**
  * Logo Component
  * Unified logo component used across the application
- * Uses the Tauri SVG logo image
+ * Renders only the SVG/logo image. Accepts `width` and `height` (pixels).
  */
-import { useTranslation } from "react-i18next";
-
 interface LogoProps {
-  /** Show "Smart School" text next to logo */
-  showText?: boolean;
-  /** Size variant */
+  /** Width in pixels (default 36) */
+  width?: number;
+  /** Height in pixels (default 36) */
+  height?: number;
+  /** Backwards-compatible: size variant (optional, deprecated) */
   size?: "sm" | "md" | "lg";
+  /** Backwards-compatible: show text (ignored) */
+  showText?: boolean;
   /** Additional CSS classes */
   className?: string;
 }
 
-const sizeConfig = {
-  sm: {
-    image: "w-6 h-6",
-    brandText: "text-sm",
-  },
-  md: {
-    image: "w-10 h-10",
-    brandText: "text-base",
-  },
-  lg: {
-    image: "w-14 h-14",
-    brandText: "text-xl",
-  },
+const presetSizeMap: Record<string, { w: number; h: number }> = {
+  sm: { w: 24, h: 24 },
+  md: { w: 40, h: 40 },
+  lg: { w: 56, h: 56 },
 };
 
 export function Logo({
-  showText = true,
+  width,
+  height,
   size = "md",
+  showText: _showText, // ignored on purpose
   className = "",
 }: LogoProps) {
-  const { t } = useTranslation();
-  const config = sizeConfig[size];
+  // Determine final dimensions: explicit props take priority, otherwise map from size, otherwise default 36
+  const finalWidth = width ?? presetSizeMap[size]?.w ?? 36;
+  const finalHeight = height ?? presetSizeMap[size]?.h ?? 36;
 
   return (
     <div className={`flex items-center ${className}`}>
       <img
         src="/tauri.svg"
         alt="Logo"
-        className={`${config.image} ${showText ? "mr-2" : ""}`}
+        width={finalWidth}
+        height={finalHeight}
+        style={{ width: finalWidth, height: finalHeight }}
       />
-      {showText && (
-        <p className={`font-bold text-inherit ${config.brandText}`}>
-          {t("app.name")}
-        </p>
-      )}
     </div>
   );
 }
