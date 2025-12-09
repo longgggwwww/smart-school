@@ -14,6 +14,15 @@ use config::{
 };
 use window::{close_window, logout_to_auth, minimize_window, open_main_window};
 
+/// Check if backend connection is available
+/// Returns true if connected, false otherwise
+#[tauri::command]
+fn check_connection() -> bool {
+    // For now, always return true since we're running locally
+    // In production, this could ping a backend server
+    true
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -48,6 +57,8 @@ pub fn run() {
             validate_token,
             get_current_user,
             clear_session,
+            // Utility commands
+            check_connection,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

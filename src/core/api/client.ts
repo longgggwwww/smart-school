@@ -128,20 +128,33 @@ export function createApiClient(config: ApiClientConfig = {}) {
   }
 
   return {
-    get: <T>(endpoint: string, options?: Omit<RequestOptions, "method" | "body">) =>
-      request<T>(endpoint, { ...options, method: "GET" }),
+    get: <T>(
+      endpoint: string,
+      options?: Omit<RequestOptions, "method" | "body">
+    ) => request<T>(endpoint, { ...options, method: "GET" }),
 
-    post: <T>(endpoint: string, body?: unknown, options?: Omit<RequestOptions, "method">) =>
-      request<T>(endpoint, { ...options, method: "POST", body }),
+    post: <T>(
+      endpoint: string,
+      body?: unknown,
+      options?: Omit<RequestOptions, "method">
+    ) => request<T>(endpoint, { ...options, method: "POST", body }),
 
-    put: <T>(endpoint: string, body?: unknown, options?: Omit<RequestOptions, "method">) =>
-      request<T>(endpoint, { ...options, method: "PUT", body }),
+    put: <T>(
+      endpoint: string,
+      body?: unknown,
+      options?: Omit<RequestOptions, "method">
+    ) => request<T>(endpoint, { ...options, method: "PUT", body }),
 
-    patch: <T>(endpoint: string, body?: unknown, options?: Omit<RequestOptions, "method">) =>
-      request<T>(endpoint, { ...options, method: "PATCH", body }),
+    patch: <T>(
+      endpoint: string,
+      body?: unknown,
+      options?: Omit<RequestOptions, "method">
+    ) => request<T>(endpoint, { ...options, method: "PATCH", body }),
 
-    delete: <T>(endpoint: string, options?: Omit<RequestOptions, "method" | "body">) =>
-      request<T>(endpoint, { ...options, method: "DELETE" }),
+    delete: <T>(
+      endpoint: string,
+      options?: Omit<RequestOptions, "method" | "body">
+    ) => request<T>(endpoint, { ...options, method: "DELETE" }),
   };
 }
 

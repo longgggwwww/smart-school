@@ -18,16 +18,21 @@ export class ApiError extends Error {
 
   static fromTauriError(error: unknown): ApiError {
     if (error instanceof ApiError) return error;
-    
+
     if (error instanceof Error) {
       return new ApiError(error.message, "TAURI_ERROR", undefined, error);
     }
-    
+
     if (typeof error === "string") {
       return new ApiError(error, "TAURI_ERROR");
     }
-    
-    return new ApiError("Unknown error occurred", "UNKNOWN_ERROR", undefined, error);
+
+    return new ApiError(
+      "Unknown error occurred",
+      "UNKNOWN_ERROR",
+      undefined,
+      error
+    );
   }
 
   toJSON() {

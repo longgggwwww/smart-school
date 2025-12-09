@@ -9,7 +9,8 @@ export {
 } from "./TitleBarContext";
 
 // Main layout sub-components
-export { NavMenu } from "./NavMenu";
 export { UserMenu } from "./UserMenu";
 export { UserInfo } from "./UserInfo";
 export { FullscreenControl } from "./FullscreenControl";
+export { FluidContent } from "./FluidContent";
+export { StatusBar } from "./StatusBar";

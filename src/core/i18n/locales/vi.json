@@ -26,7 +26,17 @@
     "error": "Lỗi",
     "success": "Thành công",
     "warning": "Cảnh báo",
-    "info": "Thông tin"
+    "info": "Thông tin",
+    "pageUnderConstruction": "Trang đang phát triển",
+    "pageUnderConstructionDesc": "Trang này đang được phát triển. Vui lòng quay lại sau.",
+    "lightMode": "Chế độ sáng",
+    "darkMode": "Chế độ tối",
+    "fullscreen": "Toàn màn hình",
+    "exitFullscreen": "Thoát toàn màn hình",
+    "minimize": "Thu nhỏ",
+    "maximize": "Phóng to",
+    "restore": "Khôi phục",
+    "closeWindow": "Đóng"
   },
   "auth": {
     "login": "Đăng nhập",
@@ -40,14 +50,87 @@
     "logoutSuccess": "Đăng xuất thành công",
     "invalidCredentials": "Tên đăng nhập hoặc mật khẩu không đúng",
     "accountLocked": "Tài khoản của bạn đã bị khóa",
-    "accountInactive": "Tài khoản của bạn chưa được kích hoạt"
+    "accountInactive": "Tài khoản của bạn chưa được kích hoạt",
+    "welcome": "Chào mừng",
+    "signInToContinue": "Đăng nhập để tiếp tục",
+    "usernamePlaceholder": "Nhập tên đăng nhập",
+    "passwordPlaceholder": "Nhập mật khẩu",
+    "selectAccount": "Chọn tài khoản",
+    "removeAccount": "Xóa tài khoản",
+    "signIn": "Đăng nhập",
+    "idCard": "Thẻ ID",
+    "idCardTooltip": "Quét thẻ ID để đăng nhập",
+    "errorRequired": "Trường này là bắt buộc",
+    "errorUserNotFound": "Không tìm thấy người dùng",
+    "errorInvalidCredentials": "Thông tin đăng nhập không hợp lệ",
+    "errorAccountLocked": "Tài khoản đã bị khóa",
+    "errorAccountInactive": "Tài khoản chưa được kích hoạt",
+    "errorLogin": "Lỗi đăng nhập",
+    "errorUsernameRequired": "Tên đăng nhập là bắt buộc"
   },
-  "navigation": {
-    "dashboard": "Bảng điều khiển",
-    "overview": "Tổng quan",
-    "users": "Người dùng",
+  "dashboard": {
+    "signedInAs": "Đã đăng nhập với",
     "settings": "Cài đặt",
-    "profile": "Hồ sơ"
+    "help": "Trợ giúp & Góp ý",
+    "loggingOut": "Đang đăng xuất...",
+    "logout": "Đăng xuất",
+    "welcomeBack": "Chào mừng trở lại",
+    "welcomeMessage": "Đây là những gì đang diễn ra hôm nay",
+    "totalStudents": "Tổng học sinh",
+    "totalClasses": "Tổng lớp học",
+    "totalTeachers": "Tổng giáo viên",
+    "attendance": "Điểm danh",
+    "quickActions": "Thao tác nhanh",
+    "addStudent": "Thêm học sinh",
+    "takeAttendance": "Điểm danh",
+    "viewReports": "Xem báo cáo"
+  },
+  "nav": {
+    "dashboard": "Bảng điều khiển",
+    "settings": "Cài đặt",
+    "admin": {
+      "overview": "Tổng quan",
+      "systemStatus": "Trạng thái hệ thống",
+      "users": "Quản lý người dùng",
+      "accounts": "Tài khoản",
+      "rbac": "Vai trò & Quyền",
+      "teachers": "Giáo viên",
+      "students": "Học sinh",
+      "classes": "Quản lý lớp học",
+      "createClass": "Tạo lớp",
+      "schedule": "Thời khóa biểu",
+      "assignments": "Bài tập",
+      "infrastructure": "Cơ sở hạ tầng",
+      "roomsDevices": "Phòng & Thiết bị",
+      "monitoring": "Giám sát",
+      "config": "Cấu hình",
+      "reports": "Báo cáo",
+      "teachingReports": "Báo cáo giảng dạy",
+      "auditLogs": "Nhật ký kiểm toán",
+      "backup": "Sao lưu & Khôi phục"
+    },
+    "teacher": {
+      "liveClass": "Lớp học trực tuyến",
+      "classControl": "Điều khiển lớp",
+      "teaching": "Chế độ giảng dạy",
+      "interaction": "Tương tác",
+      "learningManagement": "Học tập",
+      "myClasses": "Lớp của tôi",
+      "content": "Nội dung",
+      "gradebook": "Sổ điểm",
+      "personalSchedule": "Lịch của tôi",
+      "notifications": "Thông báo"
+    },
+    "student": {
+      "liveClass": "Lớp học trực tuyến",
+      "joinClass": "Vào lớp",
+      "chat": "Trò chuyện",
+      "myLearning": "Học tập của tôi",
+      "myClasses": "Lớp của tôi",
+      "assignments": "Bài tập",
+      "myGrades": "Điểm của tôi",
+      "notifications": "Thông báo"
+    }
   },
   "errors": {
     "networkError": "Lỗi mạng. Vui lòng kiểm tra kết nối.",
@@ -55,5 +138,29 @@
     "notFound": "Không tìm thấy tài nguyên",
     "unauthorized": "Truy cập không được phép",
     "forbidden": "Truy cập bị từ chối"
+  },
+  "statusBar": {
+    "connected": "Đã kết nối",
+    "disconnected": "Mất kết nối",
+    "settings": "Cài đặt"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "general": "Chung",
+    "appearance": "Giao diện",
+    "language": "Ngôn ngữ",
+    "autoStart": "Khởi động cùng hệ thống",
+    "autoStartDesc": "Tự động khởi động ứng dụng khi đăng nhập",
+    "rememberMe": "Ghi nhớ mặc định",
+    "rememberMeDesc": "Bật 'Ghi nhớ đăng nhập' mặc định",
+    "nfcLogin": "Đăng nhập NFC",
+    "nfcLoginDesc": "Bật tùy chọn đăng nhập bằng thẻ NFC",
+    "selectLanguage": "Chọn ngôn ngữ",
+    "theme": {
+      "label": "Giao diện",
+      "system": "Hệ thống",
+      "light": "Sáng",
+      "dark": "Tối"
+    }
   }
 }

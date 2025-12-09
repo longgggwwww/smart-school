@@ -44,7 +44,9 @@ interface FullscreenControlProps {
   showDivider?: boolean;
 }
 
-export function FullscreenControl({ showDivider = true }: FullscreenControlProps) {
+export function FullscreenControl({
+  showDivider = true,
+}: FullscreenControlProps) {
   const { t } = useTranslation();
   const [isFullscreen, setIsFullscreen] = useState(false);
 

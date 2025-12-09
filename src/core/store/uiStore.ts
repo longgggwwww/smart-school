@@ -7,7 +7,8 @@ import { devtools } from "zustand/middleware";
 import type { UIState, Toast } from "./types";
 
 // Generate unique toast ID
-const generateId = () => `toast_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+const generateId = () =>
+  `toast_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
 /**
  * UI Store - NOT persisted

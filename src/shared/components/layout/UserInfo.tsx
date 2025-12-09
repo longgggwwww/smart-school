@@ -1,6 +1,8 @@
 /**
  * User Info Component
  * Displays current user name and role chip
+ * No avatar - just name and role badge
+ * Role names are hardcoded (mock data, not translated)
  */
 import { Chip } from "@heroui/react";
 import type { AuthUser, UserRoleType } from "../../../features/auth/types";
@@ -16,7 +18,7 @@ const roleChipColors: Record<
   SUPER_ADMIN: "danger",
 };
 
-// Role display names
+// Role display names (hardcoded - mock data)
 const roleNames: Record<UserRoleType, string> = {
   STUDENT: "Student",
   TEACHER: "Teacher",
@@ -37,12 +39,12 @@ export function UserInfo({ user }: UserInfoProps) {
   const roleColor = roleType ? roleChipColors[roleType] : "primary";
 
   return (
-    <div className="flex items-center gap-1.5 text-sm">
-      <span className="font-bold text-gray-800 dark:text-gray-200">
-        {userName}:
+    <div className="flex items-center gap-2">
+      <span className="text-default-800 dark:text-default-200 font-semibold text-sm">
+        {userName}
       </span>
       {roleType && (
-        <Chip size="sm" color={roleColor} variant="flat" className="h-5">
+        <Chip size="sm" color={roleColor} variant="flat">
           {roleName}
         </Chip>
       )}

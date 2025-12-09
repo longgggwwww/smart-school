@@ -26,7 +26,17 @@
     "error": "Error",
     "success": "Success",
     "warning": "Warning",
-    "info": "Information"
+    "info": "Information",
+    "pageUnderConstruction": "Page Under Construction",
+    "pageUnderConstructionDesc": "This page is currently being developed. Please check back later.",
+    "lightMode": "Light Mode",
+    "darkMode": "Dark Mode",
+    "fullscreen": "Fullscreen",
+    "exitFullscreen": "Exit Fullscreen",
+    "minimize": "Minimize",
+    "maximize": "Maximize",
+    "restore": "Restore",
+    "closeWindow": "Close"
   },
   "auth": {
     "login": "Login",
@@ -40,14 +50,87 @@
     "logoutSuccess": "Logout successful",
     "invalidCredentials": "Invalid username or password",
     "accountLocked": "Your account has been locked",
-    "accountInactive": "Your account is inactive"
+    "accountInactive": "Your account is inactive",
+    "welcome": "Welcome",
+    "signInToContinue": "Sign in to continue",
+    "usernamePlaceholder": "Enter your username",
+    "passwordPlaceholder": "Enter your password",
+    "selectAccount": "Select Account",
+    "removeAccount": "Remove Account",
+    "signIn": "Sign In",
+    "idCard": "ID Card",
+    "idCardTooltip": "Scan your ID card to login",
+    "errorRequired": "This field is required",
+    "errorUserNotFound": "User not found",
+    "errorInvalidCredentials": "Invalid credentials",
+    "errorAccountLocked": "Account is locked",
+    "errorAccountInactive": "Account is inactive",
+    "errorLogin": "Login error",
+    "errorUsernameRequired": "Username is required"
   },
-  "navigation": {
-    "dashboard": "Dashboard",
-    "overview": "Overview",
-    "users": "Users",
+  "dashboard": {
+    "signedInAs": "Signed in as",
     "settings": "Settings",
-    "profile": "Profile"
+    "help": "Help & Feedback",
+    "loggingOut": "Logging out...",
+    "logout": "Log Out",
+    "welcomeBack": "Welcome back",
+    "welcomeMessage": "Here's what's happening today",
+    "totalStudents": "Total Students",
+    "totalClasses": "Total Classes",
+    "totalTeachers": "Total Teachers",
+    "attendance": "Attendance",
+    "quickActions": "Quick Actions",
+    "addStudent": "Add Student",
+    "takeAttendance": "Take Attendance",
+    "viewReports": "View Reports"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "admin": {
+      "overview": "Overview",
+      "systemStatus": "System Status",
+      "users": "User Management",
+      "accounts": "Accounts",
+      "rbac": "Roles & Permissions",
+      "teachers": "Teachers",
+      "students": "Students",
+      "classes": "Class Management",
+      "createClass": "Create Class",
+      "schedule": "Schedule",
+      "assignments": "Assignments",
+      "infrastructure": "Infrastructure",
+      "roomsDevices": "Rooms & Devices",
+      "monitoring": "Monitoring",
+      "config": "Configuration",
+      "reports": "Reports",
+      "teachingReports": "Teaching Reports",
+      "auditLogs": "Audit Logs",
+      "backup": "Backup & Restore"
+    },
+    "teacher": {
+      "liveClass": "Live Class",
+      "classControl": "Class Control",
+      "teaching": "Teaching Mode",
+      "interaction": "Interaction",
+      "learningManagement": "Learning",
+      "myClasses": "My Classes",
+      "content": "Content",
+      "gradebook": "Gradebook",
+      "personalSchedule": "My Schedule",
+      "notifications": "Notifications"
+    },
+    "student": {
+      "liveClass": "Live Class",
+      "joinClass": "Join Class",
+      "chat": "Chat",
+      "myLearning": "My Learning",
+      "myClasses": "My Classes",
+      "assignments": "Assignments",
+      "myGrades": "My Grades",
+      "notifications": "Notifications"
+    }
   },
   "errors": {
     "networkError": "Network error. Please check your connection.",
@@ -55,5 +138,29 @@
     "notFound": "Resource not found",
     "unauthorized": "Unauthorized access",
     "forbidden": "Access forbidden"
+  },
+  "statusBar": {
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "settings": "Settings"
+  },
+  "settings": {
+    "title": "Settings",
+    "general": "General",
+    "appearance": "Appearance",
+    "language": "Language",
+    "autoStart": "Auto Start",
+    "autoStartDesc": "Automatically start the application when you log in",
+    "rememberMe": "Remember Me Default",
+    "rememberMeDesc": "Enable 'Remember Me' by default on login",
+    "nfcLogin": "NFC Login",
+    "nfcLoginDesc": "Enable NFC card login option",
+    "selectLanguage": "Select Language",
+    "theme": {
+      "label": "Theme",
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    }
   }
 }

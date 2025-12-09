@@ -29,9 +29,4 @@ export {
 } from "./service";
 
 // Hooks
-export {
-  useAppConfig,
-  useTheme,
-  useWindowState,
-  useAutoStart,
-} from "./hooks";
+export { useAppConfig, useTheme, useWindowState, useAutoStart } from "./hooks";
