@@ -23,8 +23,8 @@ import {
   InformationCircleIcon as HeroInformationCircleIcon,
   XCircleIcon as HeroXCircleIcon,
   UserIcon as HeroUserIcon,
-  ArrowRightOnRectangleIcon as HeroArrowRightOnRectangleIcon,
   Cog6ToothIcon as HeroCog6ToothIcon,
+  KeyIcon as HeroKeyIcon,
 } from "@heroicons/react/24/outline";
 
 export const MinusIcon = (props: SVGProps<SVGSVGElement>) => (
@@ -107,10 +107,10 @@ export const UserIcon = (props: SVGProps<SVGSVGElement>) => (
   <HeroUserIcon className="w-4 h-4" {...props} />
 );
 
-export const LogoutIcon = (props: SVGProps<SVGSVGElement>) => (
-  <HeroArrowRightOnRectangleIcon className="w-4 h-4" {...props} />
-);
-
 export const SettingsIcon = (props: SVGProps<SVGSVGElement>) => (
   <HeroCog6ToothIcon className="w-4 h-4" {...props} />
+);
+
+export const NfcIcon = (props: SVGProps<SVGSVGElement>) => (
+  <HeroKeyIcon className="w-4 h-4" {...props} />
 );

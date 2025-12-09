@@ -9,7 +9,7 @@ import "./styles/globals.css";
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <HeroUIProvider>
-      <div className="relative w-full h-screen overflow-hidden">
+      <div className="overflow-hidden">
         <RouterProvider router={router} />
       </div>
     </HeroUIProvider>

@@ -23,10 +23,10 @@ export default function ForgotPasswordPage() {
     <section className="flex flex-col h-full bg-white dark:bg-gray-900">
       {/* Content */}
       <main className="flex-1 flex flex-col items-center pt-4 px-4">
-        <h1 className="text-xl font-bold text-gray-800 dark:text-white">
+        <h1 className="text-xl font-bold text-gray-800 dark:text-white text-center">
           {t("auth.forgotPasswordTitle")}
         </h1>
-        <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">
+        <p className="text-sm text-gray-500 dark:text-gray-400 mb-6 text-center">
           {t("auth.forgotPasswordDesc")}
         </p>
 
