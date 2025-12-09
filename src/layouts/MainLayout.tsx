@@ -25,7 +25,7 @@ import {
   AccordionItem,
 } from "@heroui/react";
 import {
-  TitleBar,
+  MenuBar,
   AnimatedOutlet,
   UserMenu,
   UserInfo,
@@ -199,12 +199,12 @@ export default function MainLayout() {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-gray-50 dark:bg-gray-900">
-      {/* Custom Title Bar with maximize button and user info centered */}
-      <TitleBar
-        showMaximize={true}
-        showThemeSwitcher={true}
-        showLanguageSwitcher={true}
+    <div className="">
+      {/* Custom Menu Bar with maximize button and user info centered */}
+      <MenuBar
+        showMaximize
+        showThemeSwitcher
+        showLanguageSwitcher
         centerContent={<UserInfo user={currentUser} />}
         rightContent={<FullscreenControl />}
       />

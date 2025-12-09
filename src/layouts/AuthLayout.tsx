@@ -3,12 +3,12 @@
  * Layout wrapper for authentication pages
  */
 import { Image } from "@heroui/react";
-import { TitleBar, AnimatedOutlet } from "../shared/components";
+import { MenuBar, AnimatedOutlet } from "../shared/components";
 
 export default function AuthLayout() {
   return (
     <div className="flex flex-col h-screen bg-white dark:bg-gray-900">
-      <TitleBar rootRoutes={["/"]} />
+      <MenuBar rootRoutes={["/"]} />
       <div className="flex flex-col items-center pt-8 pb-4">
         <Image src="/tauri.svg" alt="Logo" className="w-16 h-16" />
       </div>
