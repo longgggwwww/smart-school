@@ -1,0 +1,66 @@
+/**
+ * UI Primitives
+ * Re-export HeroUI components with optional customizations
+ * This allows for easy swapping of UI library in the future
+ */
+
+// Re-export commonly used HeroUI components
+export {
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Checkbox,
+  Chip,
+  Divider,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+  DropdownSection,
+  Input,
+  Link,
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  Select,
+  SelectItem,
+  Spinner,
+  Switch,
+  Table,
+  TableHeader,
+  TableColumn,
+  TableBody,
+  TableRow,
+  TableCell,
+  Tabs,
+  Tab,
+  Textarea,
+  Tooltip,
+  User,
+  Avatar,
+  Badge,
+  Skeleton,
+  Listbox,
+  ListboxItem,
+  ListboxSection,
+  Accordion,
+  AccordionItem,
+  Breadcrumbs,
+  BreadcrumbItem,
+  Progress,
+  Pagination,
+} from "@heroui/react";
+
+// Custom UI components can be added here
+// export { default as CustomButton } from "./CustomButton";

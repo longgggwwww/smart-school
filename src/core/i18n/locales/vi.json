@@ -1,0 +1,59 @@
+{
+  "app": {
+    "name": "Smart School",
+    "loading": "Đang tải..."
+  },
+  "common": {
+    "save": "Lưu",
+    "cancel": "Hủy",
+    "delete": "Xóa",
+    "edit": "Sửa",
+    "create": "Tạo mới",
+    "search": "Tìm kiếm",
+    "filter": "Lọc",
+    "export": "Xuất",
+    "import": "Nhập",
+    "refresh": "Làm mới",
+    "back": "Quay lại",
+    "next": "Tiếp theo",
+    "previous": "Trước đó",
+    "submit": "Gửi",
+    "confirm": "Xác nhận",
+    "close": "Đóng",
+    "yes": "Có",
+    "no": "Không",
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "success": "Thành công",
+    "warning": "Cảnh báo",
+    "info": "Thông tin"
+  },
+  "auth": {
+    "login": "Đăng nhập",
+    "logout": "Đăng xuất",
+    "username": "Tên đăng nhập",
+    "password": "Mật khẩu",
+    "rememberMe": "Ghi nhớ đăng nhập",
+    "forgotPassword": "Quên mật khẩu?",
+    "loginSuccess": "Đăng nhập thành công",
+    "loginFailed": "Đăng nhập thất bại",
+    "logoutSuccess": "Đăng xuất thành công",
+    "invalidCredentials": "Tên đăng nhập hoặc mật khẩu không đúng",
+    "accountLocked": "Tài khoản của bạn đã bị khóa",
+    "accountInactive": "Tài khoản của bạn chưa được kích hoạt"
+  },
+  "navigation": {
+    "dashboard": "Bảng điều khiển",
+    "overview": "Tổng quan",
+    "users": "Người dùng",
+    "settings": "Cài đặt",
+    "profile": "Hồ sơ"
+  },
+  "errors": {
+    "networkError": "Lỗi mạng. Vui lòng kiểm tra kết nối.",
+    "serverError": "Lỗi máy chủ. Vui lòng thử lại sau.",
+    "notFound": "Không tìm thấy tài nguyên",
+    "unauthorized": "Truy cập không được phép",
+    "forbidden": "Truy cập bị từ chối"
+  }
+}
