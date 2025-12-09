@@ -15,7 +15,9 @@
     "close": "Đóng",
     "back": "Quay lại",
     "lightMode": "Chế độ sáng",
-    "darkMode": "Chế độ tối"
+    "darkMode": "Chế độ tối",
+    "pageUnderConstruction": "Trang đang xây dựng",
+    "comingSoon": "Tính năng này sắp ra mắt!"
   },
   "home": {
     "title": "Trang chủ",
@@ -67,5 +69,52 @@
     "addStudent": "Thêm học sinh",
     "takeAttendance": "Điểm danh",
     "viewReports": "Xem báo cáo"
+  },
+  "nav": {
+    "dashboard": "Bảng điều khiển",
+    "settings": "Cài đặt",
+    "admin": {
+      "overview": "Tổng quan",
+      "systemStatus": "Trạng thái hệ thống",
+      "users": "Quản lý Người dùng",
+      "accounts": "Danh sách Tài khoản",
+      "rbac": "Phân quyền (RBAC)",
+      "teachers": "Danh sách Giáo viên",
+      "students": "Danh sách Học sinh",
+      "classes": "Quản lý Lớp học",
+      "createClass": "Tạo lớp mới",
+      "schedule": "Thời khóa biểu",
+      "assignments": "Gán Giáo viên/Học sinh",
+      "infrastructure": "Quản lý Hạ tầng",
+      "roomsDevices": "Phòng & Thiết bị",
+      "monitoring": "Giám sát Server",
+      "config": "Cấu hình Hệ thống",
+      "reports": "Báo cáo & Dữ liệu",
+      "teachingReports": "Báo cáo dạy và học",
+      "auditLogs": "Nhật ký (Audit Logs)",
+      "backup": "Sao lưu & Phục hồi"
+    },
+    "teacher": {
+      "liveClass": "Đang Dạy",
+      "classControl": "Điều khiển lớp",
+      "teaching": "Giảng dạy",
+      "interaction": "Tương tác",
+      "learningManagement": "Quản lý Học tập",
+      "myClasses": "Lớp học của tôi",
+      "content": "Nội dung",
+      "gradebook": "Sổ điểm",
+      "personalSchedule": "Lịch dạy cá nhân",
+      "notifications": "Thông báo"
+    },
+    "student": {
+      "liveClass": "Lớp học trực tuyến",
+      "joinClass": "Vào lớp học",
+      "chat": "Trò chuyện",
+      "myLearning": "Học tập của tôi",
+      "myClasses": "Lớp học của tôi",
+      "assignments": "Bài tập",
+      "myGrades": "Điểm số",
+      "notifications": "Thông báo"
+    }
   }
 }

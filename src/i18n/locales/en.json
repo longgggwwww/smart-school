@@ -15,7 +15,9 @@
     "close": "Close",
     "back": "Back",
     "lightMode": "Light mode",
-    "darkMode": "Dark mode"
+    "darkMode": "Dark mode",
+    "pageUnderConstruction": "Page Under Construction",
+    "comingSoon": "This feature is coming soon!"
   },
   "home": {
     "title": "Home",
@@ -67,5 +69,52 @@
     "addStudent": "Add Student",
     "takeAttendance": "Take Attendance",
     "viewReports": "View Reports"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "admin": {
+      "overview": "Overview",
+      "systemStatus": "System Status",
+      "users": "User Management",
+      "accounts": "Accounts",
+      "rbac": "Permissions (RBAC)",
+      "teachers": "Teachers",
+      "students": "Students",
+      "classes": "Class Management",
+      "createClass": "Create Class",
+      "schedule": "Schedule",
+      "assignments": "Assign Teachers/Students",
+      "infrastructure": "Infrastructure",
+      "roomsDevices": "Rooms & Devices",
+      "monitoring": "Server Monitoring",
+      "config": "System Config",
+      "reports": "Reports & Data",
+      "teachingReports": "Teaching Reports",
+      "auditLogs": "Audit Logs",
+      "backup": "Backup & Recovery"
+    },
+    "teacher": {
+      "liveClass": "Live Class",
+      "classControl": "Class Control",
+      "teaching": "Teaching",
+      "interaction": "Interaction",
+      "learningManagement": "Learning Management",
+      "myClasses": "My Classes",
+      "content": "Content",
+      "gradebook": "Gradebook",
+      "personalSchedule": "My Schedule",
+      "notifications": "Notifications"
+    },
+    "student": {
+      "liveClass": "Live Class",
+      "joinClass": "Join Class",
+      "chat": "Chat",
+      "myLearning": "My Learning",
+      "myClasses": "My Classes",
+      "assignments": "Assignments",
+      "myGrades": "My Grades",
+      "notifications": "Notifications"
+    }
   }
 }
