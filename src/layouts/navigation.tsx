@@ -4,7 +4,6 @@
  */
 import { UserRoleType } from "../features/auth/types";
 import type { ReactNode } from "react";
-import { createElement } from "react";
 import {
   ChartBarIcon,
   UserGroupIcon,
@@ -57,7 +56,7 @@ export const adminMenuItems: MenuItem[] = [
     key: "dashboard",
     labelKey: "nav.dashboard",
     path: "/dashboard",
-    icon: createElement(ChartBarIcon, { className: "w-5 h-5" }),
+    icon: <ChartBarIcon className="w-5 h-5" />,
     permissions: [],
     children: [
       {
@@ -77,7 +76,7 @@ export const adminMenuItems: MenuItem[] = [
   {
     key: "users",
     labelKey: "nav.admin.users",
-    icon: createElement(UserGroupIcon, { className: "w-5 h-5" }),
+    icon: <UserGroupIcon className="w-5 h-5" />,
     permissions: [],
     children: [
       {
@@ -109,7 +108,7 @@ export const adminMenuItems: MenuItem[] = [
   {
     key: "classes",
     labelKey: "nav.admin.classes",
-    icon: createElement(BuildingLibraryIcon, { className: "w-5 h-5" }),
+    icon: <BuildingLibraryIcon className="w-5 h-5" />,
     permissions: [],
     children: [
       {
@@ -135,7 +134,7 @@ export const adminMenuItems: MenuItem[] = [
   {
     key: "infrastructure",
     labelKey: "nav.admin.infrastructure",
-    icon: createElement(ComputerDesktopIcon, { className: "w-5 h-5" }),
+    icon: <ComputerDesktopIcon className="w-5 h-5" />,
     permissions: [],
     children: [
       {
@@ -161,7 +160,7 @@ export const adminMenuItems: MenuItem[] = [
   {
     key: "reports",
     labelKey: "nav.admin.reports",
-    icon: createElement(ChartPieIcon, { className: "w-5 h-5" }),
+    icon: <ChartPieIcon className="w-5 h-5" />,
     permissions: [],
     children: [
       {
@@ -193,7 +192,7 @@ export const teacherMenuItems: MenuItem[] = [
   {
     key: "live-class",
     labelKey: "nav.teacher.liveClass",
-    icon: createElement(VideoCameraIcon, { className: "w-5 h-5" }),
+    icon: <VideoCameraIcon className="w-5 h-5" />,
     permissions: [],
     children: [
       {
@@ -219,7 +218,7 @@ export const teacherMenuItems: MenuItem[] = [
   {
     key: "learning-management",
     labelKey: "nav.teacher.learningManagement",
-    icon: createElement(BookOpenIcon, { className: "w-5 h-5" }),
+    icon: <BookOpenIcon className="w-5 h-5" />,
     permissions: [],
     children: [
       {
@@ -245,7 +244,7 @@ export const teacherMenuItems: MenuItem[] = [
   {
     key: "settings",
     labelKey: "nav.settings",
-    icon: createElement(Cog6ToothIcon, { className: "w-5 h-5" }),
+    icon: <Cog6ToothIcon className="w-5 h-5" />,
     permissions: [],
     children: [
       {
@@ -271,7 +270,7 @@ export const studentMenuItems: MenuItem[] = [
   {
     key: "live-class",
     labelKey: "nav.student.liveClass",
-    icon: "🎥",
+    icon: <VideoCameraIcon className="w-5 h-5" />,
     permissions: [],
     children: [
       {
@@ -291,7 +290,7 @@ export const studentMenuItems: MenuItem[] = [
   {
     key: "my-learning",
     labelKey: "nav.student.myLearning",
-    icon: "📖",
+    icon: <BookOpenIcon className="w-5 h-5" />,
     permissions: [],
     children: [
       {
@@ -317,7 +316,7 @@ export const studentMenuItems: MenuItem[] = [
   {
     key: "settings",
     labelKey: "nav.settings",
-    icon: "⚙️",
+    icon: <Cog6ToothIcon className="w-5 h-5" />,
     permissions: [],
     children: [
       {
