@@ -1,6 +1,12 @@
+// Core modules
+mod common;
 mod config;
 mod window;
 
+// Feature modules
+mod auth;
+
+use auth::{clear_session, get_current_user, validate_token};
 use config::{
     get_app_language, get_app_theme, get_auto_start, get_config, get_nfc_enabled,
     get_remember_me_default, get_window_state, greet, save_window_state, set_app_language,
@@ -18,6 +24,7 @@ pub fn run() {
         ))
         .invoke_handler(tauri::generate_handler![
             greet,
+            // Config commands
             get_config,
             set_config,
             get_app_language,
@@ -37,6 +44,10 @@ pub fn run() {
             logout_to_auth,
             close_window,
             minimize_window,
+            // Auth commands
+            validate_token,
+            get_current_user,
+            clear_session,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

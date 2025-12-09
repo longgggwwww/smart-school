@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import { HeroUIProvider } from "@heroui/react";
 import { router } from "./app/router";
-import "./i18n";
+import "./core/i18n";
 import "./styles/globals.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
