@@ -2,8 +2,8 @@
  * Core Store Types
  * Types for global Zustand stores
  */
-import type { AuthUser } from "../../features/auth/types";
-import type { Theme, Language } from "../config/types";
+import type { AuthUser } from "@src/features/auth/types";
+import type { Theme, Language } from "@src/core/config/types";
 
 /**
  * App-wide state

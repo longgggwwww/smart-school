@@ -25,6 +25,13 @@ import {
   UserIcon as HeroUserIcon,
   Cog6ToothIcon as HeroCog6ToothIcon,
   KeyIcon as HeroKeyIcon,
+  ChartBarIcon as HeroChartBarIcon,
+  UserGroupIcon as HeroUserGroupIcon,
+  BuildingLibraryIcon as HeroBuildingLibraryIcon,
+  ComputerDesktopIcon as HeroComputerDesktopIcon,
+  ChartPieIcon as HeroChartPieIcon,
+  VideoCameraIcon as HeroVideoCameraIcon,
+  BookOpenIcon as HeroBookOpenIcon,
 } from "@heroicons/react/24/outline";
 
 export const MinusIcon = (props: SVGProps<SVGSVGElement>) => (
@@ -111,6 +118,38 @@ export const SettingsIcon = (props: SVGProps<SVGSVGElement>) => (
   <HeroCog6ToothIcon className="w-4 h-4" {...props} />
 );
 
+export const Cog6ToothIcon = (props: SVGProps<SVGSVGElement>) => (
+  <HeroCog6ToothIcon className="w-5 h-5" {...props} />
+);
+
 export const NfcIcon = (props: SVGProps<SVGSVGElement>) => (
   <HeroKeyIcon className="w-4 h-4" {...props} />
+);
+
+export const ChartBarIcon = (props: SVGProps<SVGSVGElement>) => (
+  <HeroChartBarIcon className="w-5 h-5" {...props} />
+);
+
+export const UserGroupIcon = (props: SVGProps<SVGSVGElement>) => (
+  <HeroUserGroupIcon className="w-5 h-5" {...props} />
+);
+
+export const BuildingLibraryIcon = (props: SVGProps<SVGSVGElement>) => (
+  <HeroBuildingLibraryIcon className="w-5 h-5" {...props} />
+);
+
+export const ComputerDesktopIcon = (props: SVGProps<SVGSVGElement>) => (
+  <HeroComputerDesktopIcon className="w-5 h-5" {...props} />
+);
+
+export const ChartPieIcon = (props: SVGProps<SVGSVGElement>) => (
+  <HeroChartPieIcon className="w-5 h-5" {...props} />
+);
+
+export const VideoCameraIcon = (props: SVGProps<SVGSVGElement>) => (
+  <HeroVideoCameraIcon className="w-5 h-5" {...props} />
+);
+
+export const BookOpenIcon = (props: SVGProps<SVGSVGElement>) => (
+  <HeroBookOpenIcon className="w-5 h-5" {...props} />
 );

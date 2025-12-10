@@ -2,7 +2,7 @@
  * Navigation Configuration
  * Menu items and navigation helpers
  */
-import { UserRoleType } from "../features/auth/types";
+import { UserRoleType } from "@src/features/auth/types";
 import type { ReactNode } from "react";
 import { createElement } from "react";
 import {

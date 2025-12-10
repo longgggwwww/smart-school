@@ -4,7 +4,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import { invoke } from "@tauri-apps/api/core";
-import { DEFAULT_LANGUAGE } from "../config";
+import { DEFAULT_LANGUAGE } from "@src/core/config";
 
 // Import locale files
 import en from "./locales/en.json";

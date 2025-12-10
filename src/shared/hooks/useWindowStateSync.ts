@@ -4,8 +4,8 @@
  */
 import { useEffect, useRef } from "react";
 import { getCurrentWindow } from "@tauri-apps/api/window";
-import { saveWindowState } from "../../core/config/service";
-import type { ScreenMode } from "../../core/config/types";
+import { saveWindowState } from "@src/core/config/service";
+import type { ScreenMode } from "@src/core/config/types";
 
 /**
  * Hook to automatically sync window state changes to config file

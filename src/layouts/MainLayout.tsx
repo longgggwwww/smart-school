@@ -35,10 +35,10 @@ import {
   ChevronDownIcon,
   ThemeSwitcher,
   LanguageSwitcher,
-} from "../shared/components";
-import { useWindowStateSync } from "../shared/hooks";
-import { getStoredUser } from "../features/auth";
-import { AuthUser } from "../features/auth/types";
+} from "@src/shared/components";
+import { useWindowStateSync } from "@src/shared/hooks";
+import { getStoredUser } from "@src/features/auth";
+import { AuthUser } from "@src/features/auth/types";
 import { getMenuItemsByRole, MenuItem } from "./navigation";
 
 export default function MainLayout() {

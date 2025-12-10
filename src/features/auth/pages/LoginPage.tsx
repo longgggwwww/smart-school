@@ -23,14 +23,14 @@ import {
   NfcIcon,
 } from "@src/shared/components/icons";
 import { getRememberMeDefault, getNfcEnabled } from "@src/core/config";
-import { SavedAccount, AuthErrorCode } from "../types";
+import { SavedAccount, AuthErrorCode } from "@src/features/auth/types";
 import {
   login,
   getSavedAccounts,
   removeSavedAccount,
   openMainWindow,
   AuthError,
-} from "../service";
+} from "@src/features/auth/service";
 
 export default function LoginPage() {
   const { t } = useTranslation();

@@ -5,13 +5,13 @@
 import { create } from "zustand";
 import { devtools } from "zustand/middleware";
 import type { AuthState } from "./types";
-import type { AuthUser } from "../../features/auth/types";
+import type { AuthUser } from "@src/features/auth/types";
 import {
   getStoredUser,
   setStoredUser,
   removeStoredUser,
   removeStoredToken,
-} from "../../features/auth/storage";
+} from "@src/features/auth/storage";
 
 /**
  * Auth Store - NOT persisted (uses auth storage instead)

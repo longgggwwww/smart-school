@@ -6,7 +6,7 @@ import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import { devtools } from "zustand/middleware";
 import type { AppState } from "./types";
-import type { Theme, Language } from "../config/types";
+import type { Theme, Language } from "@src/core/config/types";
 
 /**
  * App Store - persisted to localStorage

@@ -3,9 +3,9 @@
  * Central router configuration using feature-based routes
  */
 import { createHashRouter, Outlet } from "react-router-dom";
-import { PageDepthProvider } from "../core/router";
-import { AuthLayout, MainLayout } from "../layouts";
-import { allAuthRoutes, allMainRoutes } from "../features";
+import { PageDepthProvider } from "@src/core/router";
+import { AuthLayout, MainLayout } from "@src/layouts";
+import { allAuthRoutes, allMainRoutes } from "@src/features";
 
 export const router = createHashRouter([
   {

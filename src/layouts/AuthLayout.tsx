@@ -3,7 +3,7 @@
  * Layout wrapper for authentication pages
  */
 import { Image } from "@src/shared/components/ui";
-import { MenuBar, AnimatedOutlet } from "../shared/components";
+import { MenuBar, AnimatedOutlet } from "@src/shared/components";
 
 export default function AuthLayout() {
   return (

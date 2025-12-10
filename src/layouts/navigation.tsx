@@ -2,7 +2,7 @@
  * Navigation Configuration
  * Menu items and navigation helpers
  */
-import { UserRoleType } from "../features/auth/types";
+import { UserRoleType } from "@src/features/auth/types";
 import type { ReactNode } from "react";
 import {
   ChartBarIcon,
@@ -13,7 +13,7 @@ import {
   VideoCameraIcon,
   BookOpenIcon,
   Cog6ToothIcon,
-} from "@heroicons/react/24/outline";
+} from "@src/shared/components/icons";
 
 // ============================================================================
 // Menu Item Types
@@ -56,7 +56,7 @@ export const adminMenuItems: MenuItem[] = [
     key: "dashboard",
     labelKey: "nav.dashboard",
     path: "/dashboard",
-    icon: <ChartBarIcon className="w-5 h-5" />,
+    icon: <ChartBarIcon />,
     permissions: [],
     children: [
       {
@@ -76,7 +76,7 @@ export const adminMenuItems: MenuItem[] = [
   {
     key: "users",
     labelKey: "nav.admin.users",
-    icon: <UserGroupIcon className="w-5 h-5" />,
+    icon: <UserGroupIcon />,
     permissions: [],
     children: [
       {
@@ -108,7 +108,7 @@ export const adminMenuItems: MenuItem[] = [
   {
     key: "classes",
     labelKey: "nav.admin.classes",
-    icon: <BuildingLibraryIcon className="w-5 h-5" />,
+    icon: <BuildingLibraryIcon />,
     permissions: [],
     children: [
       {
@@ -134,7 +134,7 @@ export const adminMenuItems: MenuItem[] = [
   {
     key: "infrastructure",
     labelKey: "nav.admin.infrastructure",
-    icon: <ComputerDesktopIcon className="w-5 h-5" />,
+    icon: <ComputerDesktopIcon />,
     permissions: [],
     children: [
       {
@@ -160,7 +160,7 @@ export const adminMenuItems: MenuItem[] = [
   {
     key: "reports",
     labelKey: "nav.admin.reports",
-    icon: <ChartPieIcon className="w-5 h-5" />,
+    icon: <ChartPieIcon />,
     permissions: [],
     children: [
       {
@@ -192,7 +192,7 @@ export const teacherMenuItems: MenuItem[] = [
   {
     key: "live-class",
     labelKey: "nav.teacher.liveClass",
-    icon: <VideoCameraIcon className="w-5 h-5" />,
+    icon: <VideoCameraIcon />,
     permissions: [],
     children: [
       {
@@ -218,7 +218,7 @@ export const teacherMenuItems: MenuItem[] = [
   {
     key: "learning-management",
     labelKey: "nav.teacher.learningManagement",
-    icon: <BookOpenIcon className="w-5 h-5" />,
+    icon: <BookOpenIcon />,
     permissions: [],
     children: [
       {
@@ -244,7 +244,7 @@ export const teacherMenuItems: MenuItem[] = [
   {
     key: "settings",
     labelKey: "nav.settings",
-    icon: <Cog6ToothIcon className="w-5 h-5" />,
+    icon: <Cog6ToothIcon />,
     permissions: [],
     children: [
       {
@@ -270,7 +270,7 @@ export const studentMenuItems: MenuItem[] = [
   {
     key: "live-class",
     labelKey: "nav.student.liveClass",
-    icon: <VideoCameraIcon className="w-5 h-5" />,
+    icon: <VideoCameraIcon />,
     permissions: [],
     children: [
       {
@@ -290,7 +290,7 @@ export const studentMenuItems: MenuItem[] = [
   {
     key: "my-learning",
     labelKey: "nav.student.myLearning",
-    icon: <BookOpenIcon className="w-5 h-5" />,
+    icon: <BookOpenIcon />,
     permissions: [],
     children: [
       {
@@ -316,7 +316,7 @@ export const studentMenuItems: MenuItem[] = [
   {
     key: "settings",
     labelKey: "nav.settings",
-    icon: <Cog6ToothIcon className="w-5 h-5" />,
+    icon: <Cog6ToothIcon />,
     permissions: [],
     children: [
       {

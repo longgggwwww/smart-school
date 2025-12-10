@@ -12,8 +12,8 @@ import {
   Button,
   useDisclosure,
 } from "@src/shared/components/ui";
-import { SettingsIcon } from "../icons";
-import { SettingsModal } from "../common";
+import { SettingsIcon } from "@src/shared/components/icons";
+import { SettingsModal } from "@src/shared/components/common";
 
 // Connection check interval (ms)
 const CONNECTION_CHECK_INTERVAL = 30000;

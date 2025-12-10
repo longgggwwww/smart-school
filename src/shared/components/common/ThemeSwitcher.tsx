@@ -6,7 +6,7 @@ import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Button, Tooltip } from "@src/shared/components/ui";
 import { useTheme } from "@src/core/config";
-import { SunIcon, MoonIcon } from "../icons";
+import { SunIcon, MoonIcon } from "@src/shared/components/icons";
 
 export default function ThemeSwitcher() {
   const { t } = useTranslation();

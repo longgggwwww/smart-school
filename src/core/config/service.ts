@@ -3,7 +3,7 @@
  * Handles app configuration via Tauri backend
  */
 import { invoke } from "@tauri-apps/api/core";
-import { tauriInvoke } from "../api";
+import { tauriInvoke } from "@src/core/api";
 import {
   AppConfig,
   WindowConfig,

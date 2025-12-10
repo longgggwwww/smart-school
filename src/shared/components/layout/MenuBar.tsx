@@ -14,7 +14,7 @@ import {
   RestoreIcon,
   CloseIcon,
   BackIcon,
-} from "../icons";
+} from "@src/shared/components/icons";
 
 export interface MenuBarProps {
   /** Show back button - defaults to auto (based on route depth) */
