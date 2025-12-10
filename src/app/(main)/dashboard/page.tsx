@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { Button } from "@heroui/react";
+import { Button } from "@src/shared/components/ui";
 
 export default function DashboardPage() {
   const { t } = useTranslation();

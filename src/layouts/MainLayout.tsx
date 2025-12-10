@@ -23,7 +23,7 @@ import {
   Button,
   Accordion,
   AccordionItem,
-} from "@heroui/react";
+} from "@src/shared/components/ui";
 import {
   MenuBar,
   AnimatedOutlet,

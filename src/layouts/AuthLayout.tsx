@@ -2,7 +2,7 @@
  * Auth Layout
  * Layout wrapper for authentication pages
  */
-import { Image } from "@heroui/react";
+import { Image } from "@src/shared/components/ui";
 import { MenuBar, AnimatedOutlet } from "../shared/components";
 
 export default function AuthLayout() {

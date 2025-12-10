@@ -16,7 +16,7 @@ import {
   ButtonGroup,
   Link,
   Checkbox,
-} from "@heroui/react";
+} from "@src/shared/components/ui";
 import {
   ChevronDownIcon,
   CloseIcon,

@@ -13,7 +13,7 @@ import {
   ButtonGroup,
   Link,
   Checkbox,
-} from "@heroui/react";
+} from "@src/shared/components/ui";
 import { SavedAccount, AuthErrorCode } from "@src/features/auth/types";
 import {
   login,
@@ -22,10 +22,7 @@ import {
   openMainWindow,
   AuthError,
 } from "@src/features/auth/service";
-import {
-  getRememberMeDefault,
-  getNfcEnabled,
-} from "@src/core/config/service";
+import { getRememberMeDefault, getNfcEnabled } from "@src/core/config/service";
 import {
   ChevronDownIcon,
   NfcIcon,

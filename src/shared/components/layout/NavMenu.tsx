@@ -6,7 +6,7 @@
  */
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
-import { Link } from "@heroui/react";
+import { Link } from "@src/shared/components/ui";
 import type { MenuItem } from "@src/layouts/navigation";
 
 interface NavMenuProps {

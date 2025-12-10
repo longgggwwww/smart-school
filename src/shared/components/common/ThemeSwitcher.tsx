@@ -4,7 +4,7 @@
  */
 import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { Button, Tooltip } from "@heroui/react";
+import { Button, Tooltip } from "@src/shared/components/ui";
 import { useTheme } from "@src/core/config";
 import { SunIcon, MoonIcon } from "../icons";
 

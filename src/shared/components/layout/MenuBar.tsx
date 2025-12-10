@@ -6,7 +6,12 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation } from "react-router-dom";
 import { getCurrentWindow } from "@tauri-apps/api/window";
-import { Button, Tooltip } from "@heroui/react";
+import {
+  Button,
+  Tooltip,
+  Navbar,
+  NavbarContent,
+} from "@src/shared/components/ui";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   MinusIcon,
@@ -131,12 +136,9 @@ export default function MenuBar({
   };
 
   return (
-    <div
-      onMouseDown={handleDrag}
-      className={`${height} flex items-center justify-between cursor-move select-none bg-transparent`}
-    >
+    <Navbar onMouseDown={handleDrag} className={`${height} cursor-move`}>
       {/* Left side - Back button + Custom left content */}
-      <div className="flex items-center gap-0">
+      <NavbarContent justify="start">
         <AnimatePresence mode="wait">
           {canGoBack && (
             <motion.div
@@ -164,19 +166,19 @@ export default function MenuBar({
         {leftContent.map((content, index) => (
           <div key={index}>{content}</div>
         ))}
-      </div>
+      </NavbarContent>
 
       {/* Center - Custom center content */}
       {centerContent.length > 0 && (
-        <div className="hidden sm:flex items-center justify-center gap-4 flex-1">
+        <NavbarContent justify="center" className="hidden sm:flex">
           {centerContent.map((content, index) => (
             <div key={index}>{content}</div>
           ))}
-        </div>
+        </NavbarContent>
       )}
 
       {/* Right side - Custom content + Window controls */}
-      <div className="flex items-center justify-end gap-0">
+      <NavbarContent justify="end">
         {rightContent.map((content, index) => (
           <div key={index}>{content}</div>
         ))}
@@ -217,11 +219,7 @@ export default function MenuBar({
             <CloseIcon />
           </Button>
         </Tooltip>
-      </div>
-    </div>
+      </NavbarContent>
+    </Navbar>
   );
 }
-
-// Backwards-compat alias for a short deprecation period
-// export type TitleBarProps = MenuBarProps;
-// export const TitleBar = MenuBar;

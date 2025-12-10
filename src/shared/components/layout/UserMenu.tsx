@@ -10,7 +10,7 @@ import {
   DropdownMenu,
   DropdownItem,
   Avatar,
-} from "@heroui/react";
+} from "@src/shared/components/ui";
 import type { AuthUser } from "@src/features/auth/types";
 
 interface UserMenuProps {

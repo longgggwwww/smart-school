@@ -4,7 +4,7 @@
  * No avatar - just name and role badge
  * Role names are hardcoded (mock data, not translated)
  */
-import { Chip } from "@heroui/react";
+import { Chip } from "@src/shared/components/ui";
 import type { AuthUser, UserRoleType } from "@src/features/auth/types";
 
 // Role color mapping for Chip

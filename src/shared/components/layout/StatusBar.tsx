@@ -6,7 +6,12 @@
 import { useState, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { invoke } from "@tauri-apps/api/core";
-import { Chip, Tooltip, Button, useDisclosure } from "@heroui/react";
+import {
+  Chip,
+  Tooltip,
+  Button,
+  useDisclosure,
+} from "@src/shared/components/ui";
 import { SettingsIcon } from "../icons";
 import { SettingsModal } from "../common";
 

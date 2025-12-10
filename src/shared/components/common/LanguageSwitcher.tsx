@@ -9,7 +9,7 @@ import {
   DropdownMenu,
   DropdownItem,
   Button,
-} from "@heroui/react";
+} from "@src/shared/components/ui";
 import { LANGUAGES } from "@src/core/config";
 import { changeLanguage } from "@src/core/i18n";
 

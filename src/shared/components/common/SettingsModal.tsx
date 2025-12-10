@@ -18,7 +18,7 @@ import {
   Tabs,
   Tab,
   Divider,
-} from "@heroui/react";
+} from "@src/shared/components/ui";
 import {
   getTheme,
   setTheme,

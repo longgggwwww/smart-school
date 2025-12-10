@@ -5,7 +5,7 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { getCurrentWindow } from "@tauri-apps/api/window";
-import { Button, Tooltip, Divider } from "@heroui/react";
+import { Button, Tooltip, Divider } from "@src/shared/components/ui";
 
 // Fullscreen icons
 const FullscreenIcon = () => (

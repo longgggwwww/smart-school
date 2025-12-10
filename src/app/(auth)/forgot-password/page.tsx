@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Button, Input } from "@heroui/react";
+import { Button, Input } from "@src/shared/components/ui";
 
 export default function ForgotPasswordPage() {
   const { t } = useTranslation();
