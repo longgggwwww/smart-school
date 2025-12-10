@@ -66,11 +66,10 @@
     "errorAccountLocked": "Tài khoản đã bị khóa",
     "errorAccountInactive": "Tài khoản chưa được kích hoạt",
     "errorLogin": "Lỗi đăng nhập",
-    "errorUsernameRequired": "Tên đăng nhập là bắt buộc"
-      ,
-      "forgotPasswordTitle": "Quên mật khẩu",
-      "forgotPasswordDesc": "Nhập tên đăng nhập và yêu cầu trợ giúp từ quản trị viên để đặt lại mật khẩu.",
-      "requestTeacher": "Yêu cầu trợ giúp"
+    "errorUsernameRequired": "Tên đăng nhập là bắt buộc",
+    "forgotPasswordTitle": "Quên mật khẩu",
+    "forgotPasswordDesc": "Nhập tên đăng nhập và yêu cầu trợ giúp.",
+    "requestTeacher": "Yêu cầu trợ giúp"
   },
   "dashboard": {
     "signedInAs": "Đã đăng nhập với",

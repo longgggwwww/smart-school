@@ -66,10 +66,9 @@
     "errorAccountLocked": "Account is locked",
     "errorAccountInactive": "Account is inactive",
     "errorLogin": "Login error",
-    "errorUsernameRequired": "Username is required"
-    ,
+    "errorUsernameRequired": "Username is required",
     "forgotPasswordTitle": "Forgot your password",
-    "forgotPasswordDesc": "Enter your username and request assistance from your administrator to reset your password.",
+    "forgotPasswordDesc": "Enter your username and request assistance.",
     "requestTeacher": "Request Help"
   },
   "dashboard": {
