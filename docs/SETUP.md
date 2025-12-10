@@ -15,7 +15,7 @@ src/
 ├── shared/                 # Shared across features
 │   ├── components/         # Reusable components
 │   │   ├── common/         # ThemeSwitcher, LanguageSwitcher, etc.
-│   │   ├── layout/         # TitleBar, NavMenu, UserMenu, etc.
+│   │   ├── layout/         # MenuBar, NavMenu, UserMenu, etc.
 │   │   ├── icons/          # Centralized icons
 │   │   └── ui/             # HeroUI re-exports
 │   ├── hooks/              # Generic hooks (useDebounce, etc.)

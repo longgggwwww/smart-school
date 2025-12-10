@@ -19,11 +19,9 @@ interface MenuBarContextType {
 
 const defaultConfig: Partial<MenuBarProps> = {
   showBack: "auto",
-  showThemeSwitcher: true,
-  showLanguageSwitcher: true,
-  showMinimize: true,
-  showMaximize: false,
-  showClose: true,
+  leftContent: [],
+  centerContent: [],
+  rightContent: [],
 };
 
 const MenuBarContext = createContext<MenuBarContextType | null>(null);
@@ -67,6 +65,6 @@ export function useMenuBarConfig(config: Partial<MenuBarProps>) {
 }
 
 // Backwards-compat aliases for a short deprecation period
-export { MenuBarProvider as TitleBarProvider };
-export const useTitleBar = useMenuBar;
-export const useTitleBarConfig = useMenuBarConfig;
+// export { MenuBarProvider as TitleBarProvider };
+// export const useTitleBar = useMenuBar;
+// export const useTitleBarConfig = useMenuBarConfig;

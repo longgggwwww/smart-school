@@ -8,7 +8,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { getCurrentWindow } from "@tauri-apps/api/window";
 import { Button, Tooltip } from "@heroui/react";
 import { AnimatePresence, motion } from "framer-motion";
-import { LanguageSwitcher, ThemeSwitcher } from "../common";
 import {
   MinusIcon,
   MaximizeIcon,
@@ -24,22 +23,12 @@ export interface MenuBarProps {
   onBack?: () => void;
   /** Root routes where back button should NOT appear (for "auto" mode) */
   rootRoutes?: string[];
-  /** Show theme switcher */
-  showThemeSwitcher?: boolean;
-  /** Show language switcher */
-  showLanguageSwitcher?: boolean;
-  /** Show minimize button */
-  showMinimize?: boolean;
-  /** Show maximize button */
-  showMaximize?: boolean;
-  /** Show close button */
-  showClose?: boolean;
   /** Custom left content */
-  leftContent?: React.ReactNode;
+  leftContent?: React.ReactNode[];
   /** Custom center content */
-  centerContent?: React.ReactNode;
+  centerContent?: React.ReactNode[];
   /** Custom right content (before window controls) */
-  rightContent?: React.ReactNode;
+  rightContent?: React.ReactNode[];
   /** Height class */
   height?: string;
 }
@@ -48,14 +37,9 @@ export default function MenuBar({
   showBack = "auto",
   onBack,
   rootRoutes = ["/", "/dashboard"],
-  showThemeSwitcher = true,
-  showLanguageSwitcher = true,
-  showMinimize = true,
-  showMaximize = false,
-  showClose = true,
-  leftContent,
-  centerContent,
-  rightContent,
+  leftContent = [],
+  centerContent = [],
+  rightContent = [],
   height = "h-8",
 }: MenuBarProps) {
   const { t } = useTranslation();
@@ -97,9 +81,9 @@ export default function MenuBar({
     if (showBack === false) return false;
     if (showBack === true) return true;
 
-    // Auto mode: show only when in deep level (not root routes)
+    // Auto mode: show only when in deep level (not root routes) and onBack is provided
     const isRootRoute = rootRoutes.includes(location.pathname);
-    return !isRootRoute;
+    return !isRootRoute && !!onBack;
   };
 
   const canGoBack = shouldShowBack();
@@ -147,12 +131,12 @@ export default function MenuBar({
   };
 
   return (
-    <header
-      className={`flex items-center justify-between ${height} cursor-move select-none`}
+    <div
       onMouseDown={handleDrag}
+      className={`${height} flex items-center justify-between cursor-move select-none bg-transparent`}
     >
-      {/* Left side - Back button, Theme/Language switchers */}
-      <div className="flex items-center flex-1">
+      {/* Left side - Back button + Custom left content */}
+      <div className="flex items-center gap-0">
         <AnimatePresence mode="wait">
           {canGoBack && (
             <motion.div
@@ -177,67 +161,67 @@ export default function MenuBar({
             </motion.div>
           )}
         </AnimatePresence>
-        {showThemeSwitcher && <ThemeSwitcher titleBar />}
-        {showLanguageSwitcher && <LanguageSwitcher />}
-        {leftContent}
+        {leftContent.map((content, index) => (
+          <div key={index}>{content}</div>
+        ))}
       </div>
 
       {/* Center - Custom center content */}
-      {centerContent && (
-        <div className="flex items-center justify-center">{centerContent}</div>
+      {centerContent.length > 0 && (
+        <div className="hidden sm:flex items-center justify-center gap-4 flex-1">
+          {centerContent.map((content, index) => (
+            <div key={index}>{content}</div>
+          ))}
+        </div>
       )}
 
       {/* Right side - Custom content + Window controls */}
-      <div className="flex items-center justify-end flex-1">
-        {rightContent}
-        {showMinimize && (
-          <Tooltip content={t("common.minimize")} placement="bottom">
-            <Button
-              isIconOnly
-              variant="light"
-              radius="none"
-              onPress={handleMinimize}
-              className="min-w-9 w-9 h-8 data-[hover=true]:bg-yellow-500 data-[hover=true]:text-white"
-            >
-              <MinusIcon />
-            </Button>
-          </Tooltip>
-        )}
-        {showMaximize && (
-          <Tooltip
-            content={isMaximized ? t("common.restore") : t("common.maximize")}
-            placement="bottom"
+      <div className="flex items-center justify-end gap-0">
+        {rightContent.map((content, index) => (
+          <div key={index}>{content}</div>
+        ))}
+        <Tooltip content={t("common.minimize")} placement="bottom">
+          <Button
+            isIconOnly
+            variant="light"
+            radius="none"
+            onPress={handleMinimize}
+            className="min-w-9 w-9 h-8 data-[hover=true]:bg-yellow-500 data-[hover=true]:text-white"
           >
-            <Button
-              isIconOnly
-              variant="light"
-              radius="none"
-              isDisabled={isFullscreen}
-              onPress={handleMaximize}
-              className="min-w-9 w-9 h-8 data-[hover=true]:bg-blue-500 data-[hover=true]:text-white"
-            >
-              {isMaximized ? <RestoreIcon /> : <MaximizeIcon />}
-            </Button>
-          </Tooltip>
-        )}
-        {showClose && (
-          <Tooltip content={t("common.close")} placement="bottom">
-            <Button
-              isIconOnly
-              variant="light"
-              radius="none"
-              onPress={handleClose}
-              className="min-w-9 w-9 h-8 data-[hover=true]:bg-red-500 data-[hover=true]:text-white"
-            >
-              <CloseIcon />
-            </Button>
-          </Tooltip>
-        )}
+            <MinusIcon />
+          </Button>
+        </Tooltip>
+        <Tooltip
+          content={isMaximized ? t("common.restore") : t("common.maximize")}
+          placement="bottom"
+        >
+          <Button
+            isIconOnly
+            variant="light"
+            radius="none"
+            isDisabled={isFullscreen}
+            onPress={handleMaximize}
+            className="min-w-9 w-9 h-8 data-[hover=true]:bg-blue-500 data-[hover=true]:text-white"
+          >
+            {isMaximized ? <RestoreIcon /> : <MaximizeIcon />}
+          </Button>
+        </Tooltip>
+        <Tooltip content={t("common.close")} placement="bottom">
+          <Button
+            isIconOnly
+            variant="light"
+            radius="none"
+            onPress={handleClose}
+            className="min-w-9 w-9 h-8 data-[hover=true]:bg-red-500 data-[hover=true]:text-white"
+          >
+            <CloseIcon />
+          </Button>
+        </Tooltip>
       </div>
-    </header>
+    </div>
   );
 }
 
 // Backwards-compat alias for a short deprecation period
-export type TitleBarProps = MenuBarProps;
-export const TitleBar = MenuBar;
+// export type TitleBarProps = MenuBarProps;
+// export const TitleBar = MenuBar;

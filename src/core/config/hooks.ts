@@ -95,11 +95,28 @@ export function useTheme() {
     }
   }, []);
 
+  // Determine if currently dark mode
+  const isDark =
+    theme === "dark" ||
+    (theme === "system" &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+  // Apply theme to document
+  useEffect(() => {
+    const root = document.documentElement;
+    if (isDark) {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+  }, [isDark]);
+
   return {
     theme,
     loading,
     setTheme,
     reload: loadTheme,
+    isDark,
   };
 }
 

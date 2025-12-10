@@ -33,6 +33,8 @@ import {
   Logo,
   StatusBar,
   ChevronDownIcon,
+  ThemeSwitcher,
+  LanguageSwitcher,
 } from "../shared/components";
 import { useWindowStateSync } from "../shared/hooks";
 import { getStoredUser } from "../features/auth";
@@ -202,11 +204,9 @@ export default function MainLayout() {
     <div className="">
       {/* Custom Menu Bar with maximize button and user info centered */}
       <MenuBar
-        showMaximize
-        showThemeSwitcher
-        showLanguageSwitcher
-        centerContent={<UserInfo user={currentUser} />}
-        rightContent={<FullscreenControl />}
+        leftContent={[<ThemeSwitcher />, <LanguageSwitcher />]}
+        centerContent={[<UserInfo user={currentUser} />]}
+        rightContent={[<FullscreenControl />]}
       />
 
       {/* Navigation Bar - Following HeroUI "With Avatar" pattern */}

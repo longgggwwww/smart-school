@@ -41,8 +41,8 @@ src/
 │   │   │   ├── AnimatedOutlet.tsx
 │   │   │   └── index.ts
 │   │   ├── layout/         # Layout components
-│   │   │   ├── TitleBar.tsx
-│   │   │   ├── TitleBarContext.tsx
+│   │   │   ├── MenuBar.tsx
+│   │   │   ├── MenuBarContext.tsx
 │   │   │   ├── NavMenu.tsx
 │   │   │   ├── UserMenu.tsx
 │   │   │   ├── UserInfo.tsx
@@ -355,7 +355,7 @@ import { PageDepthProvider, usePageDepth } from "../../core/router";
 
 ### From Shared
 ```typescript
-import { TitleBar, AnimatedOutlet, NavMenu } from "../../shared/components";
+import { MenuBar, AnimatedOutlet, NavMenu } from "../../shared/components";
 import { useDebounce, useLocalStorage } from "../../shared/hooks";
 import { cn, formatDate, debounce } from "../../shared/utils";
 import type { ApiResponse, PaginatedResponse } from "../../shared/types";

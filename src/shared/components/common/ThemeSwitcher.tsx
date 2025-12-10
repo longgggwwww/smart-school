@@ -2,68 +2,32 @@
  * Theme Switcher Component
  * Toggle between light and dark themes
  */
-import { useEffect } from "react";
+import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Button, Tooltip } from "@heroui/react";
 import { useTheme } from "../../../core/config";
 import { SunIcon, MoonIcon } from "../icons";
 
-interface ThemeSwitcherProps {
-  /** Use compact title bar style */
-  titleBar?: boolean;
-}
-
-export default function ThemeSwitcher({
-  titleBar = false,
-}: ThemeSwitcherProps) {
+export default function ThemeSwitcher() {
   const { t } = useTranslation();
-  const { theme, setTheme } = useTheme();
+  const { setTheme, isDark } = useTheme();
 
-  // Determine if currently dark mode
-  const isDark =
-    theme === "dark" ||
-    (theme === "system" &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches);
-
-  // Apply theme to document
-  useEffect(() => {
-    const root = document.documentElement;
-    if (isDark) {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-  }, [isDark]);
-
-  const toggleTheme = () => {
+  const toggleTheme = useCallback(() => {
     setTheme(isDark ? "light" : "dark");
-  };
-
-  if (titleBar) {
-    return (
-      <Tooltip
-        content={isDark ? t("common.lightMode") : t("common.darkMode")}
-        placement="bottom"
-      >
-        <Button
-          isIconOnly
-          variant="light"
-          radius="none"
-          onPress={toggleTheme}
-          className="min-w-9 w-9 h-8"
-        >
-          {isDark ? <SunIcon /> : <MoonIcon />}
-        </Button>
-      </Tooltip>
-    );
-  }
+  }, [setTheme, isDark]);
 
   return (
     <Tooltip
-      content={isDark ? t("common.lightMode") : t("common.darkMode")}
+      content={t(isDark ? "common.lightMode" : "common.darkMode")}
       placement="bottom"
     >
-      <Button isIconOnly variant="light" size="sm" onPress={toggleTheme}>
+      <Button
+        isIconOnly
+        variant="light"
+        radius="none"
+        onPress={toggleTheme}
+        className="min-w-9 w-9 h-8"
+      >
         {isDark ? <SunIcon /> : <MoonIcon />}
       </Button>
     </Tooltip>
