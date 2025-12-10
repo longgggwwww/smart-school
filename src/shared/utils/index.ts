@@ -157,3 +157,25 @@ export function omit<T extends object, K extends keyof T>(
   keys.forEach((key) => delete result[key]);
   return result;
 }
+
+/**
+ * Check if running on desktop (Tauri) or web
+ */
+export function isDesktop(): boolean {
+  return typeof window !== "undefined" && "__TAURI__" in window;
+}
+
+/**
+ * Get the current platform (OS or 'web')
+ */
+export async function getPlatform(): Promise<string> {
+  if (isDesktop()) {
+    try {
+      const { platform } = await import("@tauri-apps/plugin-os");
+      return await platform();
+    } catch {
+      return "desktop";
+    }
+  }
+  return "web";
+}
