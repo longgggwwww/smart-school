@@ -6,12 +6,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation } from "react-router-dom";
 import { getCurrentWindow } from "@tauri-apps/api/window";
-import {
-  Button,
-  Tooltip,
-  Navbar,
-  NavbarContent,
-} from "@src/shared/components/ui";
+import { Button, Tooltip } from "@src/shared/components/ui";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   MinusIcon,
@@ -136,9 +131,12 @@ export default function MenuBar({
   };
 
   return (
-    <Navbar onMouseDown={handleDrag} className={`${height} cursor-move`}>
+    <div
+      onMouseDown={handleDrag}
+      className={`${height} flex items-center justify-between cursor-move select-none bg-transparent`}
+    >
       {/* Left side - Back button + Custom left content */}
-      <NavbarContent justify="start">
+      <div className="flex items-center gap-0">
         <AnimatePresence mode="wait">
           {canGoBack && (
             <motion.div
@@ -166,19 +164,19 @@ export default function MenuBar({
         {leftContent.map((content, index) => (
           <div key={index}>{content}</div>
         ))}
-      </NavbarContent>
+      </div>
 
       {/* Center - Custom center content */}
       {centerContent.length > 0 && (
-        <NavbarContent justify="center" className="hidden sm:flex">
+        <div className="hidden sm:flex items-center justify-center gap-4 flex-1">
           {centerContent.map((content, index) => (
             <div key={index}>{content}</div>
           ))}
-        </NavbarContent>
+        </div>
       )}
 
       {/* Right side - Custom content + Window controls */}
-      <NavbarContent justify="end">
+      <div className="flex items-center justify-end gap-0">
         {rightContent.map((content, index) => (
           <div key={index}>{content}</div>
         ))}
@@ -219,7 +217,7 @@ export default function MenuBar({
             <CloseIcon />
           </Button>
         </Tooltip>
-      </NavbarContent>
-    </Navbar>
+      </div>
+    </div>
   );
 }
