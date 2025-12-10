@@ -31,8 +31,8 @@ import {
   getNfcEnabled,
   setNfcEnabled,
   type Theme,
-} from "../../../core/config";
-import i18n from "../../../core/i18n";
+} from "@src/core/config";
+import i18n from "@src/core/i18n";
 
 interface SettingsModalProps {
   isOpen: boolean;

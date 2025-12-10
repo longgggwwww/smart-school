@@ -5,7 +5,7 @@
  * Role names are hardcoded (mock data, not translated)
  */
 import { Chip } from "@heroui/react";
-import type { AuthUser, UserRoleType } from "../../../features/auth/types";
+import type { AuthUser, UserRoleType } from "@src/features/auth/types";
 
 // Role color mapping for Chip
 const roleChipColors: Record<

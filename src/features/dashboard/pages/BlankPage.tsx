@@ -4,7 +4,7 @@
  */
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
-import { FluidContent } from "../../../shared/components/layout/FluidContent";
+import { FluidContent } from "@src/shared/components/layout/FluidContent";
 
 // Lorem ipsum content for placeholder
 const LOREM_CONTENT = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.

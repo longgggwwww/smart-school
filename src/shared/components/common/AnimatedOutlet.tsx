@@ -4,7 +4,7 @@
  */
 import { useLocation, useOutlet } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { usePageDepth } from "../../../core/router";
+import { usePageDepth } from "@src/core/router";
 
 const slideVariants = {
   enter: (direction: number) => ({ x: direction > 0 ? "100%" : "-100%" }),

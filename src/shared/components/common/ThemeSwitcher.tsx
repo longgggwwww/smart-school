@@ -5,7 +5,7 @@
 import { useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Button, Tooltip } from "@heroui/react";
-import { useTheme } from "../../../core/config";
+import { useTheme } from "@src/core/config";
 import { SunIcon, MoonIcon } from "../icons";
 
 export default function ThemeSwitcher() {

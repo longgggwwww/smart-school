@@ -11,7 +11,7 @@ import {
   DropdownItem,
   Avatar,
 } from "@heroui/react";
-import type { AuthUser } from "../../../features/auth/types";
+import type { AuthUser } from "@src/features/auth/types";
 
 interface UserMenuProps {
   user: AuthUser | null;

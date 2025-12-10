@@ -10,8 +10,8 @@ import {
   DropdownItem,
   Button,
 } from "@heroui/react";
-import { LANGUAGES } from "../../../core/config";
-import { changeLanguage } from "../../../core/i18n";
+import { LANGUAGES } from "@src/core/config";
+import { changeLanguage } from "@src/core/i18n";
 
 export default function LanguageSwitcher() {
   const { i18n, t } = useTranslation();

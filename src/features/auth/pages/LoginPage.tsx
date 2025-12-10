@@ -21,8 +21,8 @@ import {
   ChevronDownIcon,
   CloseIcon,
   NfcIcon,
-} from "../../../shared/components/icons";
-import { getRememberMeDefault, getNfcEnabled } from "../../../core/config";
+} from "@src/shared/components/icons";
+import { getRememberMeDefault, getNfcEnabled } from "@src/core/config";
 import { SavedAccount, AuthErrorCode } from "../types";
 import {
   login,

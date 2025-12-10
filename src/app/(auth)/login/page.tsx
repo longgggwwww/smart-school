@@ -14,23 +14,23 @@ import {
   Link,
   Checkbox,
 } from "@heroui/react";
-import { SavedAccount, AuthErrorCode } from "../../../features/auth/types";
+import { SavedAccount, AuthErrorCode } from "@src/features/auth/types";
 import {
   login,
   getSavedAccounts,
   removeSavedAccount,
   openMainWindow,
   AuthError,
-} from "../../../features/auth/service";
+} from "@src/features/auth/service";
 import {
   getRememberMeDefault,
   getNfcEnabled,
-} from "../../../core/config/service";
+} from "@src/core/config/service";
 import {
   ChevronDownIcon,
   NfcIcon,
   CloseIcon,
-} from "../../../shared/components/icons";
+} from "@src/shared/components/icons";
 
 export default function LoginPage() {
   const { t } = useTranslation();
