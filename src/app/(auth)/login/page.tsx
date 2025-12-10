@@ -26,49 +26,11 @@ import {
   getRememberMeDefault,
   getNfcEnabled,
 } from "../../../core/config/service";
-
-// Icons
-const ChevronDownIcon = () => (
-  <svg
-    className="w-4 h-4 text-gray-500"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M19 9l-7 7-7-7"
-    />
-  </svg>
-);
-
-const NfcIcon = () => (
-  <svg
-    className="w-4 h-4"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth={2}
-      d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"
-    />
-  </svg>
-);
-
-const CloseSmallIcon = () => (
-  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-    <path
-      fillRule="evenodd"
-      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-      clipRule="evenodd"
-    />
-  </svg>
-);
+import {
+  ChevronDownIcon,
+  NfcIcon,
+  CloseIcon,
+} from "../../../shared/components/icons";
 
 export default function LoginPage() {
   const { t } = useTranslation();
@@ -230,7 +192,7 @@ export default function LoginPage() {
                                 )
                               }
                             >
-                              <CloseSmallIcon />
+                              <CloseIcon />
                             </Button>
                           </Tooltip>
                         }
