@@ -133,10 +133,10 @@ export default function MenuBar({
   return (
     <div
       onMouseDown={handleDrag}
-      className={`${height} flex items-center justify-between cursor-move select-none bg-transparent`}
+      className={`${height} flex justify-between`}
     >
       {/* Left side - Back button + Custom left content */}
-      <div className="flex items-center gap-0">
+      <div className="flex">
         <AnimatePresence mode="wait">
           {canGoBack && (
             <motion.div
@@ -168,7 +168,7 @@ export default function MenuBar({
 
       {/* Center - Custom center content */}
       {centerContent.length > 0 && (
-        <div className="hidden sm:flex items-center justify-center gap-4 flex-1">
+        <div className="hidden sm:flex items-center justify-center gap-4">
           {centerContent.map((content, index) => (
             <div key={index}>{content}</div>
           ))}
@@ -176,7 +176,7 @@ export default function MenuBar({
       )}
 
       {/* Right side - Custom content + Window controls */}
-      <div className="flex items-center justify-end gap-0">
+      <div className="flex">
         {rightContent.map((content, index) => (
           <div key={index}>{content}</div>
         ))}
@@ -186,7 +186,7 @@ export default function MenuBar({
             variant="light"
             radius="none"
             onPress={handleMinimize}
-            className="min-w-9 w-9 h-8 data-[hover=true]:bg-yellow-500 data-[hover=true]:text-white"
+            className="w-9 h-8 data-[hover=true]:bg-yellow-500 data-[hover=true]:text-white"
           >
             <MinusIcon />
           </Button>
@@ -201,7 +201,7 @@ export default function MenuBar({
             radius="none"
             isDisabled={isFullscreen}
             onPress={handleMaximize}
-            className="min-w-9 w-9 h-8 data-[hover=true]:bg-blue-500 data-[hover=true]:text-white"
+            className="w-9 h-8 data-[hover=true]:bg-blue-500 data-[hover=true]:text-white"
           >
             {isMaximized ? <RestoreIcon /> : <MaximizeIcon />}
           </Button>
@@ -212,7 +212,7 @@ export default function MenuBar({
             variant="light"
             radius="none"
             onPress={handleClose}
-            className="min-w-9 w-9 h-8 data-[hover=true]:bg-red-500 data-[hover=true]:text-white"
+            className="w-9 h-8 data-[hover=true]:bg-red-500 data-[hover=true]:text-white"
           >
             <CloseIcon />
           </Button>
