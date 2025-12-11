@@ -40,7 +40,7 @@ export function UserInfo({ user }: UserInfoProps) {
 
   return (
     <div className="flex items-center gap-2">
-      <span className="text-default-800 dark:text-default-200 font-semibold text-sm">
+      <span className="text-default-800 dark:text-default-200 font-bold text-sm">
         {userName}
       </span>
       {roleType && (
