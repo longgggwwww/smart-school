@@ -2,7 +2,7 @@
  * MenuBar Component (renamed from TitleBar)
  * Custom window menu bar with drag support and window controls
  */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useLocation } from "react-router-dom";
 import { getCurrentWindow } from "@tauri-apps/api/window";
@@ -77,16 +77,14 @@ export default function MenuBar({
   }, []);
 
   // Determine if back button should be visible (iPhone Settings style)
-  const shouldShowBack = (): boolean => {
+  const canGoBack = useMemo(() => {
     if (showBack === false) return false;
     if (showBack === true) return true;
 
-    // Auto mode: show only when in deep level (not root routes) and onBack is provided
+    // Auto mode: show only when in deep level (not root routes) and there's navigation history
     const isRootRoute = rootRoutes.includes(location.pathname);
-    return !isRootRoute && !!onBack;
-  };
-
-  const canGoBack = shouldShowBack();
+    return !isRootRoute && window.history.length > 1;
+  }, [showBack, rootRoutes, location.pathname]);
 
   const handleDrag = async (e: React.MouseEvent) => {
     // Only drag if clicking directly on the header or drag-enabled areas
@@ -103,32 +101,32 @@ export default function MenuBar({
     await currentWindow.startDragging();
   };
 
-  const handleBack = () => {
+  const handleBack = useCallback(() => {
     if (onBack) {
       onBack();
     } else {
       navigate(-1);
     }
-  };
+  }, [onBack, navigate]);
 
-  const handleMinimize = async () => {
+  const handleMinimize = useCallback(async () => {
     const currentWindow = getCurrentWindow();
     await currentWindow.minimize();
-  };
+  }, []);
 
-  const handleMaximize = async () => {
+  const handleMaximize = useCallback(async () => {
     const currentWindow = getCurrentWindow();
     if (isMaximized) {
       await currentWindow.unmaximize();
     } else {
       await currentWindow.maximize();
     }
-  };
+  }, [isMaximized]);
 
-  const handleClose = async () => {
+  const handleClose = useCallback(async () => {
     const currentWindow = getCurrentWindow();
     await currentWindow.close();
-  };
+  }, []);
 
   return (
     <div

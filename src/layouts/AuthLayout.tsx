@@ -8,7 +8,7 @@ import { MenuBar, AnimatedOutlet, LanguageSwitcher, ThemeSwitcher } from "@src/s
 export default function AuthLayout() {
   return (
     <div className="flex flex-col h-screen bg-white dark:bg-gray-900">
-      <MenuBar rootRoutes={["/"]} showBack
+      <MenuBar rootRoutes={["/"]}
               leftContent={[<ThemeSwitcher />, <LanguageSwitcher />]}
       />
       <div className="flex flex-col items-center pt-8 pb-4">
