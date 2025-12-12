@@ -2,6 +2,8 @@
  * Shared Utility Functions
  */
 
+import { platform } from '@tauri-apps/plugin-os';
+
 /**
  * Merge class names (simple implementation)
  * For more complex cases, consider using clsx or tailwind-merge
@@ -158,24 +160,17 @@ export function omit<T extends object, K extends keyof T>(
   return result;
 }
 
+
 /**
- * Check if running on desktop (Tauri) or web
+ * Get the current platform
  */
-export function isDesktop(): boolean {
-  return typeof window !== "undefined" && "__TAURI__" in window;
+export async function getPlatform(): Promise<string> {
+  return platform();
 }
 
 /**
- * Get the current platform (OS or 'web')
+ * Check if the app is running in desktop (Tauri) environment using __TAURI__
  */
-export async function getPlatform(): Promise<string> {
-  if (isDesktop()) {
-    try {
-      const { platform } = await import("@tauri-apps/plugin-os");
-      return await platform();
-    } catch {
-      return "desktop";
-    }
-  }
-  return "web";
+export function isDesktopApp(): boolean {
+  return typeof window !== "undefined" && (window as any).__TAURI__ !== undefined;
 }

@@ -129,10 +129,7 @@ export default function MenuBar({
   }, []);
 
   return (
-    <div
-      onMouseDown={handleDrag}
-      className={`${height} flex justify-between`}
-    >
+    <div onMouseDown={handleDrag} className={`${height} flex justify-between`}>
       {/* Left side - Back button + Custom left content */}
       <div className="flex">
         <AnimatePresence mode="wait">

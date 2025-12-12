@@ -3,13 +3,21 @@
  * Layout wrapper for authentication pages
  */
 import { Image } from "@src/shared/components/ui";
-import { MenuBar, AnimatedOutlet, LanguageSwitcher, ThemeSwitcher } from "@src/shared/components";
+import {
+  MenuBar,
+  AnimatedOutlet,
+  LanguageSwitcher,
+  ThemeSwitcher,
+} from "@src/shared/components";
+import { isDesktopApp } from "@src/shared/utils";
 
 export default function AuthLayout() {
+  console.log("Is Desktop App:", isDesktopApp());
   return (
     <div className="flex flex-col h-screen bg-white dark:bg-gray-900">
-      <MenuBar rootRoutes={["/"]}
-              leftContent={[<ThemeSwitcher />, <LanguageSwitcher />]}
+      <MenuBar
+        rootRoutes={["/"]}
+        leftContent={[<ThemeSwitcher />, <LanguageSwitcher />]}
       />
       <div className="flex flex-col items-center pt-8 pb-4">
         <Image src="/tauri.svg" alt="Logo" className="w-16 h-16" />
