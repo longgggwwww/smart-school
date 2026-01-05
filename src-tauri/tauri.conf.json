@@ -10,7 +10,7 @@
     "frontendDist": "../dist"
   },
   "app": {
-    "withGlobalTauri": true, 
+    "withGlobalTauri": true,
     "windows": [
       {
         "label": "auth",
@@ -57,27 +57,30 @@
       "icons/icon.ico"
     ],
     "windows": {
-        "allowDowngrades": true,
-        "certificateThumbprint": null,
-        "digestAlgorithm": null,
-        "nsis": null,
-        "signCommand": null,
-        "timestampUrl": null,
-        "tsp": false,
-        "webviewInstallMode": {
-            "silent": true,
-            "type": "downloadBootstrapper"
-        },
-        "wix": {
-            "language": {
-                "en-US": {
-                    "localePath": "./wix/locales/en-US.wxl"
-                },
-                "vi-VN": {
-                    "localePath": "./wix/locales/vi-VN.wxl"
-                }
-            }
+      "allowDowngrades": true,
+      "certificateThumbprint": null,
+      "digestAlgorithm": null,
+      "nsis": null,
+      "signCommand": null,
+      "timestampUrl": null,
+      "tsp": false,
+      "webviewInstallMode": {
+        "silent": true,
+        "type": "downloadBootstrapper"
+      },
+      "wix": {
+        "language": {
+          "en-US": {
+            "localePath": "./wix/locales/en-US.wxl"
+          },
+          "vi-VN": {
+            "localePath": "./wix/locales/vi-VN.wxl"
+          }
         }
-    }
+      }
+    },
+    "externalBin": [
+      "bin/server"
+    ]
   }
 }
