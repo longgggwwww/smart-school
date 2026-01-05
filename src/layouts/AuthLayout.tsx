@@ -9,10 +9,8 @@ import {
   LanguageSwitcher,
   ThemeSwitcher,
 } from "@src/shared/components";
-import { isDesktopApp } from "@src/shared/utils";
 
 export default function AuthLayout() {
-  console.log("Is Desktop App:", isDesktopApp());
   return (
     <div className="flex flex-col h-screen bg-white dark:bg-gray-900">
       <MenuBar

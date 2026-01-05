@@ -129,9 +129,12 @@ export default function MenuBar({
   }, []);
 
   return (
-    <div onMouseDown={handleDrag} className={`${height} flex justify-between`}>
+    <div
+      onMouseDown={handleDrag}
+      className={`${height} grid grid-cols-[1fr_auto_1fr] items-center w-full`}
+    >
       {/* Left side - Back button + Custom left content */}
-      <div className="flex">
+      <div className="flex items-center justify-start col-start-1">
         <AnimatePresence mode="wait">
           {canGoBack && (
             <motion.div
@@ -163,7 +166,7 @@ export default function MenuBar({
 
       {/* Center - Custom center content */}
       {centerContent.length > 0 && (
-        <div className="hidden sm:flex items-center justify-center gap-4">
+        <div className="hidden sm:flex items-center justify-center gap-4 col-start-2">
           {centerContent.map((content, index) => (
             <div key={index}>{content}</div>
           ))}
@@ -171,7 +174,7 @@ export default function MenuBar({
       )}
 
       {/* Right side - Custom content + Window controls */}
-      <div className="flex">
+      <div className="flex items-center justify-end col-start-3">
         {rightContent.map((content, index) => (
           <div key={index}>{content}</div>
         ))}
