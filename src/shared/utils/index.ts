@@ -171,7 +171,5 @@ export async function getPlatform(): Promise<string> {
  * Check if the app is running in desktop (Tauri) environment using __TAURI__
  */
 export function isDesktopApp(): boolean {
-  return (
-    typeof window !== "undefined" && (window as any).__TAURI__ !== undefined
-  );
+  return typeof window !== "undefined" && window.__TAURI__ !== undefined;
 }

@@ -15,7 +15,7 @@ pub async fn open_main_window(app: tauri::AppHandle) -> Result<(), String> {
             )
             .title("Smart School")
             .inner_size(1200.0, 800.0)
-            .min_inner_size(800.0, 600.0)
+            .min_inner_size(360.0, 640.0)
             .resizable(true)
             .center()
             .decorations(false)
@@ -47,7 +47,7 @@ pub async fn logout_to_auth(app: tauri::AppHandle) -> Result<(), String> {
         tauri::WebviewUrl::App("/".into()),
     )
     .title("Smart School - Auth")
-    .inner_size(450.0, 600.0)
+    .inner_size(375.0, 667.0)
     .resizable(false)
     .center()
     .decorations(false)
