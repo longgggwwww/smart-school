@@ -44,14 +44,6 @@ export function useWindowStateSync(debounceMs: number = 500) {
           y: position.y,
           screen_mode: screenMode,
         });
-
-        console.log("Window state saved:", {
-          width: size.width,
-          height: size.height,
-          x: position.x,
-          y: position.y,
-          screen_mode: screenMode,
-        });
       } catch (error) {
         console.error("Failed to save window state:", error);
       }

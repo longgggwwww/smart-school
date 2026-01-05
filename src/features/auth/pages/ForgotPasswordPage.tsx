@@ -18,7 +18,7 @@ export default function ForgotPasswordPage() {
       return;
     }
     // TODO: Implement request teacher for password reset
-    console.log("Request teacher for:", username);
+
     // Show success message or navigate back
   };
 

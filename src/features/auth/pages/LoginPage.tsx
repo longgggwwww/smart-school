@@ -65,23 +65,14 @@ export default function LoginPage() {
     setIsLoading(true);
 
     try {
-      console.log("Starting login with:", { username, password: "***" });
-
-      const response = await login({
+      await login({
         username,
         password,
         remember_me: rememberMe,
       });
 
-      console.log("Login successful:", response);
-
-      // Open main window and close login window
-      console.log("Opening main window...");
       await openMainWindow();
-      console.log("Main window opened");
     } catch (err) {
-      console.error("Login error:", err);
-
       // Check by error name since instanceof may not work across module boundaries
       const error = err as AuthError;
       if (error?.name === "AuthError" && error?.code) {
