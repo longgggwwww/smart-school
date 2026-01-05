@@ -100,6 +100,15 @@ pub struct AppConfig {
     pub startup: StartupConfig,
     /// Authentication settings
     pub auth: AuthConfig,
+    /// Server settings
+    #[serde(default)]
+    pub server: ServerConfig,
+}
+
+/// Server configuration
+#[derive(Debug, Clone, Serialize, Deserialize, Default)]
+pub struct ServerConfig {
+    pub enable: bool,
 }
 
 impl Default for AppConfig {
@@ -110,6 +119,7 @@ impl Default for AppConfig {
             window: WindowConfig::default(),
             startup: StartupConfig::default(),
             auth: AuthConfig::default(),
+            server: ServerConfig::default(),
         }
     }
 }

@@ -49,6 +49,10 @@ export default function LoginPage() {
     getSavedAccounts().then(setSavedAccounts);
     getRememberMeDefault().then(setRememberMe);
     getNfcEnabled().then(setNfcEnabled);
+
+    fetch("http://localhost:3000/health")
+      .then((res) => res.json())
+      .then((data) => console.log(data));
   }, []);
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {

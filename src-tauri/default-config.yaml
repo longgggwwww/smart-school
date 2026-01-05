@@ -24,3 +24,7 @@ startup:
 auth:
   remember_me_default: false
   nfc_enabled: false
+
+# Server settings
+server:
+  enable: true

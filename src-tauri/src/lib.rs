@@ -32,6 +32,28 @@ pub fn run() {
             Some(vec!["--autostarted"]),
         ))
         .plugin(tauri_plugin_os::init())
+        .plugin(tauri_plugin_shell::init())
+        .setup(|app| {
+             #[cfg(desktop)]
+             {
+                 use tauri_plugin_shell::ShellExt;
+
+                 // Check if the server sidecar should be started based on the configuration
+                 // Pass reference to the handle since load_config expects &AppHandle
+                 let config = config::load_config(&app.handle());
+                 
+                 if config.server.enable {
+                     let sidecar = app.shell().sidecar("server").unwrap();
+                     let (mut _rx, child) = sidecar.spawn().unwrap();
+                     
+                     // Prevent the child process from being killed when `child` goes out of scope.
+                     // The OS (Windows Job Object) will cleanup the subprocess when the main app exits.
+                     // If we strictly rely on Drop to kill it, it dies immediately at end of setup.
+                     std::mem::forget(child); 
+                 }
+             }
+             Ok(())
+        })
         .invoke_handler(tauri::generate_handler![
             greet,
             // Config commands

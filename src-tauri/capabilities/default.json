@@ -2,7 +2,10 @@
   "$schema": "../gen/schemas/desktop-schema.json",
   "identifier": "default",
   "description": "Capability for all application windows",
-  "windows": ["main", "auth"],
+  "windows": [
+    "main",
+    "auth"
+  ],
   "permissions": [
     "core:default",
     "opener:default",
@@ -20,6 +23,15 @@
     "core:window:allow-is-fullscreen",
     "core:window:allow-set-focus",
     "core:window:allow-center",
-    "core:window:allow-start-dragging"
+    "core:window:allow-start-dragging",
+    {
+      "identifier": "shell:allow-execute",
+      "allow": [
+        {
+          "name": "server",
+          "sidecar": true
+        }
+      ]
+    }
   ]
 }
